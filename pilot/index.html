@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Bewegungsbox Pilot</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<a class="sprung" href="#inhalt">Zum Inhalt springen</a>
+<header class="kopf">
+  <div class="kopf-innen">
+    <p class="marke">Senioren-Bewegungsbox <span class="pilot-marke">Pilot</span></p>
+    <div class="kopf-werkzeuge">
+      <label class="beispiel-label" for="beispiel">Beispiel laden</label>
+      <select id="beispiel" class="beispiel"></select>
+      <button type="button" id="loeschen" class="knopf knopf-leise">Alles löschen</button>
+    </div>
+  </div>
+</header>
+
+<main id="inhalt" class="inhalt" tabindex="-1">
+  <noscript><p class="karte">Für den Piloten muss JavaScript eingeschaltet sein.</p></noscript>
+</main>
+
+<footer class="hinweis-fest" role="note">
+  Pilot zur Veranschaulichung. Inhalte sind nicht fachlich geprüft und ersetzen keine ärztliche Beratung.
+</footer>
+
+<script src="daten.js"></script>
+<script src="logik.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
