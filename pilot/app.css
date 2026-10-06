@@ -1,0 +1,396 @@
+/* Pilot Senioren-Bewegungsbox. Große Schrift, hoher Kontrast, große Tippflächen. Keine externen Schriften. */
+
+:root {
+  color-scheme: light;
+  --text: #111111;
+  --text-leise: #3a3a3a;
+  --grund: #ffffff;
+  --flaeche: #f3f1ec;
+  --linie: #6b6b6b;
+  --haupt: #0b3d91;
+  --haupt-dunkel: #072a66;
+  --fokus: #ffbf00;
+  --gruen: #1b6e2a;
+  --gelb: #f2c200;
+  --orange: #b34700;
+  --rot: #b00020;
+  --grau: #4a4a4a;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 22px; }
+
+body {
+  margin: 0;
+  background: var(--grund);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3 { line-height: 1.25; margin: 0 0 0.6rem; }
+h1 { font-size: 1.5rem; }
+h2 { font-size: 1.25rem; }
+h3 { font-size: 1.05rem; }
+p { margin: 0 0 0.8rem; }
+
+:focus-visible {
+  outline: 4px solid var(--fokus);
+  outline-offset: 3px;
+}
+h1:focus { outline: none; }
+
+.sprung {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--haupt);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+.sprung:focus { left: 1rem; }
+
+/* Kopf */
+.kopf {
+  background: var(--flaeche);
+  border-bottom: 2px solid #d8d4ca;
+}
+.kopf-innen {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0.6rem 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.marke { margin: 0; font-weight: 700; }
+.pilot-marke {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 700;
+  background: var(--text);
+  color: #fff;
+  border-radius: 6px;
+  padding: 0 0.4rem;
+  vertical-align: middle;
+}
+.kopf-werkzeuge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.beispiel-label { font-weight: 600; }
+.beispiel {
+  font: inherit;
+  font-size: 1rem;
+  min-height: 48px;
+  max-width: 100%;
+  padding: 0.3rem 0.5rem;
+  border: 2px solid var(--linie);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
+}
+
+/* Inhalt */
+.inhalt {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.2rem 16px 7rem;
+}
+.inhalt:focus { outline: none; }
+
+.karte {
+  background: #fff;
+  border: 2px solid #d8d4ca;
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin: 0 0 1rem;
+}
+.leise { color: var(--text-leise); }
+.klein { font-size: 1rem; } /* bleibt bei 22 px, nur relativ kleiner als Überschriften */
+
+/* Knöpfe */
+.knopf {
+  font: inherit;
+  font-weight: 700;
+  min-height: 60px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  border: 3px solid var(--haupt);
+  background: var(--haupt);
+  color: #fff;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.knopf:hover { background: var(--haupt-dunkel); border-color: var(--haupt-dunkel); }
+.knopf:disabled { background: #9aa6bd; border-color: #9aa6bd; cursor: not-allowed; }
+.knopf-zweit {
+  background: #fff;
+  color: var(--haupt);
+}
+.knopf-zweit:hover { background: #e8eef9; color: var(--haupt-dunkel); }
+.knopf-leise {
+  min-height: 48px;
+  background: #fff;
+  color: var(--text);
+  border: 2px solid var(--linie);
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+}
+.knopf-leise:hover { background: #eee; border-color: var(--text); }
+.knopf-breit { width: 100%; }
+
+.knopfreihe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+.knopfreihe .knopf { flex: 1 1 12rem; }
+
+/* Fragebogen */
+.fortschritt { margin-bottom: 1rem; }
+.fortschritt-text { margin: 0 0 0.3rem; font-weight: 600; }
+.fortschritt-balken {
+  height: 14px;
+  background: #e2ded4;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1px solid #bdb8ab;
+}
+.fortschritt-balken span {
+  display: block;
+  height: 100%;
+  background: var(--haupt);
+}
+.frage-text { font-size: 1.3rem; margin-bottom: 1rem; }
+
+.wahl {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.wahl legend { padding: 0; margin-bottom: 0.5rem; }
+.wahl-knopf {
+  font: inherit;
+  text-align: left;
+  min-height: 64px;
+  padding: 0.7rem 1rem 0.7rem 3.2rem;
+  border: 3px solid var(--linie);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--text);
+  cursor: pointer;
+  position: relative;
+  touch-action: manipulation;
+}
+.wahl-knopf::before {
+  content: "";
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: -0.7rem;
+  border: 3px solid var(--linie);
+  border-radius: 50%;
+  background: #fff;
+}
+.wahl-knopf.mehrfach::before { border-radius: 6px; }
+.wahl-knopf:hover { border-color: var(--text); }
+.wahl-knopf[aria-pressed="true"] {
+  border-color: var(--haupt);
+  background: #e8eef9;
+  font-weight: 700;
+}
+.wahl-knopf[aria-pressed="true"]::before {
+  background: var(--haupt);
+  border-color: var(--haupt);
+  box-shadow: inset 0 0 0 4px #fff;
+}
+.wahl-knopf:disabled { opacity: 0.5; cursor: not-allowed; }
+.wahl-zwei { grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); }
+.skala { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.skala .wahl-knopf { padding: 0.7rem 0; text-align: center; font-size: 1.3rem; font-weight: 700; }
+.skala .wahl-knopf::before { display: none; }
+.skala-enden { display: flex; justify-content: space-between; margin-top: 0.4rem; }
+
+.eingabe {
+  font: inherit;
+  width: 100%;
+  min-height: 60px;
+  padding: 0.5rem 0.8rem;
+  border: 3px solid var(--linie);
+  border-radius: 12px;
+  color: var(--text);
+  background: #fff;
+}
+.eingabe:focus { border-color: var(--haupt); }
+.feld-hinweis { margin-top: 0.5rem; }
+.meldung {
+  margin-top: 0.8rem;
+  padding: 0.6rem 0.8rem;
+  border-left: 6px solid var(--rot);
+  background: #fdecee;
+  font-weight: 600;
+}
+.hinweis-box {
+  padding: 0.7rem 0.9rem;
+  border-left: 6px solid var(--haupt);
+  background: #eef2fa;
+  margin: 0 0 1rem;
+}
+
+/* Ampel */
+.ampel {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 3px solid;
+}
+.ampel-licht {
+  flex: 0 0 auto;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  border: 3px solid var(--text);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+.ampel h1 { margin-bottom: 0.3rem; }
+.ampel-gruen { border-color: var(--gruen); background: #e9f4eb; }
+.ampel-gruen .ampel-licht { background: var(--gruen); color: #fff; }
+.ampel-gelb { border-color: #8a6d00; background: #fff8d6; }
+.ampel-gelb .ampel-licht { background: var(--gelb); color: #111; }
+.ampel-orange { border-color: var(--orange); background: #fdeee3; }
+.ampel-orange .ampel-licht { background: var(--orange); color: #fff; }
+.ampel-rot { border-color: var(--rot); background: #fdecee; }
+.ampel-rot .ampel-licht { background: var(--rot); color: #fff; }
+.ampel-grau { border-color: var(--grau); background: #f1f1f1; }
+.ampel-grau .ampel-licht { background: var(--grau); color: #fff; }
+
+.notfall {
+  border: 4px solid var(--rot);
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+details.hinter {
+  border: 2px dashed var(--linie);
+  border-radius: var(--radius);
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+  background: #fafafa;
+}
+details.hinter summary {
+  cursor: pointer;
+  font-weight: 700;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+details.hinter ul { padding-left: 1.2rem; margin: 0.3rem 0 0.8rem; }
+details.hinter li { margin-bottom: 0.3rem; }
+code { font-size: 20px; background: #eee; padding: 0 0.2rem; border-radius: 4px; word-break: break-word; }
+
+/* Plan */
+.plan-liste { list-style: none; padding: 0; margin: 0; }
+.plan-eintrag { margin-bottom: 0.9rem; }
+.plan-eintrag h3 { margin-bottom: 0.4rem; }
+.marken { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; }
+.marke-entscheidung {
+  display: inline-block;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.05rem 0.7rem;
+  border: 2px solid;
+}
+.e-frei { border-color: var(--gruen); color: var(--gruen); background: #e9f4eb; }
+.e-info { border-color: var(--haupt); color: var(--haupt); background: #eef2fa; }
+.e-warnung { border-color: #8a6d00; color: #5c4800; background: #fff8d6; }
+.e-ersetzt { border-color: var(--haupt); color: var(--haupt); background: #fff; }
+.e-gesperrt { border-color: var(--rot); color: var(--rot); background: #fdecee; }
+.e-manuell { border-color: var(--grau); color: var(--grau); background: #f1f1f1; }
+.plan-eintrag.ist-gesperrt { background: #fbfbfb; }
+.daten { margin: 0; }
+.daten div { display: flex; flex-wrap: wrap; gap: 0 0.5rem; }
+.daten dt { font-weight: 700; }
+.daten dd { margin: 0; }
+
+/* Player */
+.platzhalter {
+  display: inline-block;
+  font-weight: 700;
+  border: 3px solid var(--orange);
+  color: var(--orange);
+  border-radius: 10px;
+  padding: 0.2rem 0.6rem;
+  margin-bottom: 0.8rem;
+}
+.player-titel { margin-bottom: 0.2rem; }
+.untertitel {
+  font-size: 1.35rem;
+  font-weight: 600;
+  min-height: 6.5rem;
+  background: var(--flaeche);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin: 0.8rem 0;
+}
+.zeit { font-variant-numeric: tabular-nums; font-weight: 700; }
+.player-knoepfe {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+.player-knoepfe .knopf { min-height: 76px; padding: 0.4rem; }
+.symbol { display: block; font-size: 1.5rem; line-height: 1; margin-bottom: 0.2rem; }
+
+/* Fester Hinweis */
+.hinweis-fest {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background: #222;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.35;
+  padding: 0.45rem 16px;
+  text-align: center;
+  border-top: 3px solid var(--fokus);
+}
+
+@media (max-width: 480px) {
+  html { font-size: 21px; }
+  .inhalt { padding-bottom: 8.5rem; }
+  .frage-text { font-size: 1.2rem; }
+  /* Abspielen oben über die volle Breite, darunter Wiederholen und Nächste Übung */
+  .player-knoepfe { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .player-knoepfe #spielen { grid-column: 1 / -1; order: -1; }
+  .kopf-werkzeuge { width: 100%; }
+  .beispiel { flex: 1 1 10rem; min-width: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

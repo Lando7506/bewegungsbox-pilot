@@ -1,0 +1,67 @@
+# Prüft den Piloten und veröffentlicht ihn auf GitHub Pages.
+# Einmalig nötig: im Repo unter Settings > Pages bei "Source" den Eintrag "GitHub Actions" wählen.
+name: Pilot prüfen und veröffentlichen
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pruefen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Python Abhängigkeiten
+        run: pip install numpy
+      - name: Python Tests (Referenz)
+        working-directory: audio_system
+        run: python -m unittest discover -s tests
+      - name: daten.js und Erwartungswerte sind aktuell
+        shell: bash
+        run: |
+          gunzip -c pilot/tests/erwartung.json.gz > /tmp/erwartung_alt.json
+          python -B pilot/werkzeuge/export.py
+          git diff --exit-code -- pilot/daten.js
+          # Inhalt vergleichen, nicht die gepackten Bytes (die können je nach zlib Version abweichen)
+          cmp /tmp/erwartung_alt.json <(gunzip -c pilot/tests/erwartung.json.gz)
+      - name: JS Logik gleich Python Logik
+        run: node pilot/tests/vergleich.test.js
+      - name: Sabotagetest
+        run: node pilot/tests/sabotage.test.js
+
+  veroeffentlichen:
+    needs: pruefen
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Nur die Dateien der App veröffentlichen
+        run: |
+          mkdir _site
+          cp pilot/index.html pilot/app.css pilot/app.js pilot/logik.js pilot/daten.js _site/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
