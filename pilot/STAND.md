@@ -19,3 +19,10 @@
 - Stufe 2, Orange O8 und O9 sowie Gleichgewichtsübungen fehlen.
 - Der Ton wurde nur in Chromium ohne Lautsprecher geprüft, nicht auf einem echten Handy oder Tablet. Auch mit einem Screenreader wurde nicht getestet.
 - Fachliche Auffälligkeiten stehen in `ABSCHLUSSBLATT.md`.
+
+## Nachtrag 06.10.2026: Bedienung nach simulierten Kundentests
+
+- Vier simulierte Kunden haben getestet (Tablet mit Sehschwäche, Angehörige in Eile, Zittern, UX-Expertin). Berichte und Zusammenfassung stehen in `ux-tests/`.
+- Die Fragen sind nach Thema gruppiert. Ein typischer Fall braucht etwa 20 statt 37 bis 49 Bildschirme. Ein automatisches Weiter gibt es nicht mehr, dafür eine feste Leiste mit Weiter, Rückfragen vor dem Löschen und eine Übersicht vor der Auswertung.
+- Browsertest: 567 Prüfungen in drei Bildschirmgrößen, alle bestanden. Darstellungstest: 386 Prüfungen, Fragetexte unverändert. Vergleich mit Python weiter 0 Abweichungen.
+

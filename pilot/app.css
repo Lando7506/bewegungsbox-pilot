@@ -9,6 +9,7 @@
   --linie: #6b6b6b;
   --haupt: #0b3d91;
   --haupt-dunkel: #072a66;
+  --haupt-hell: #e8eef9;
   --fokus: #ffbf00;
   --gruen: #1b6e2a;
   --gelb: #f2c200;
@@ -16,11 +17,13 @@
   --rot: #b00020;
   --grau: #4a4a4a;
   --radius: 14px;
+  --leiste: 5.2rem; /* Höhe der festen Leiste unten */
 }
 
 * { box-sizing: border-box; }
 
-html { font-size: 22px; }
+/* 137,5 % = 22 px bei Standardeinstellung, folgt aber der Schriftgröße des Browsers */
+html { font-size: 137.5%; }
 
 body {
   margin: 0;
@@ -32,16 +35,18 @@ body {
 }
 
 h1, h2, h3 { line-height: 1.25; margin: 0 0 0.6rem; }
-h1 { font-size: 1.5rem; }
-h2 { font-size: 1.25rem; }
+h1 { font-size: 1.4rem; }
+h2 { font-size: 1.2rem; }
 h3 { font-size: 1.05rem; }
 p { margin: 0 0 0.8rem; }
 
+/* Zweifarbiger Fokusrahmen: auf hellem und dunklem Grund sichtbar */
 :focus-visible {
-  outline: 4px solid var(--fokus);
-  outline-offset: 3px;
+  outline: 3px solid var(--text);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--fokus);
 }
-h1:focus { outline: none; }
+h1:focus, .inhalt:focus { outline: none; box-shadow: none; }
 
 .sprung {
   position: absolute;
@@ -54,7 +59,7 @@ h1:focus { outline: none; }
 }
 .sprung:focus { left: 1rem; }
 
-/* Kopf */
+/* Kopf: schmal, die Pilot-Werkzeuge sind eingeklappt */
 .kopf {
   background: var(--flaeche);
   border-bottom: 2px solid #d8d4ca;
@@ -62,10 +67,10 @@ h1:focus { outline: none; }
 .kopf-innen {
   max-width: 760px;
   margin: 0 auto;
-  padding: 0.6rem 16px;
+  padding: 0.3rem 16px;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1rem;
+  gap: 0.3rem 1rem;
   align-items: center;
   justify-content: space-between;
 }
@@ -80,17 +85,32 @@ h1:focus { outline: none; }
   padding: 0 0.4rem;
   vertical-align: middle;
 }
-.kopf-werkzeuge {
+.pilot-menue { max-width: 100%; }
+.pilot-menue summary {
+  cursor: pointer;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  padding: 0 0.6rem;
+  border: 2px solid var(--linie);
+  border-radius: 10px;
+  background: #fff;
+}
+.pilot-menue[open] summary { margin-bottom: 0.5rem; }
+.pilot-menue-inhalt {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
+  padding-bottom: 0.4rem;
 }
 .beispiel-label { font-weight: 600; }
 .beispiel {
   font: inherit;
   font-size: 1rem;
   min-height: 48px;
+  width: 100%;
   max-width: 100%;
   padding: 0.3rem 0.5rem;
   border: 2px solid var(--linie);
@@ -99,13 +119,24 @@ h1:focus { outline: none; }
   color: var(--text);
 }
 
+/* Pflichthinweis auf jeder Seite, ohne Inhalte zu verdecken */
+.hinweis-fest {
+  margin: 0;
+  background: #222;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.35;
+  padding: 0.35rem 16px;
+  text-align: center;
+}
+
 /* Inhalt */
 .inhalt {
   max-width: 760px;
   margin: 0 auto;
-  padding: 1.2rem 16px 7rem;
+  padding: 1rem 16px 2rem;
 }
-.inhalt:focus { outline: none; }
+body.mit-leiste .inhalt { padding-bottom: calc(var(--leiste) + 1.5rem); }
 
 .karte {
   background: #fff;
@@ -115,7 +146,6 @@ h1:focus { outline: none; }
   margin: 0 0 1rem;
 }
 .leise { color: var(--text-leise); }
-.klein { font-size: 1rem; } /* bleibt bei 22 px, nur relativ kleiner als Überschriften */
 
 /* Knöpfe */
 .knopf {
@@ -130,13 +160,8 @@ h1:focus { outline: none; }
   cursor: pointer;
   touch-action: manipulation;
 }
-.knopf:hover { background: var(--haupt-dunkel); border-color: var(--haupt-dunkel); }
-.knopf:disabled { background: #9aa6bd; border-color: #9aa6bd; cursor: not-allowed; }
-.knopf-zweit {
-  background: #fff;
-  color: var(--haupt);
-}
-.knopf-zweit:hover { background: #e8eef9; color: var(--haupt-dunkel); }
+.knopf:disabled { background: #9aa6bd; border-color: #9aa6bd; color: #1d2330; cursor: not-allowed; }
+.knopf-zweit { background: #fff; color: var(--haupt); }
 .knopf-leise {
   min-height: 48px;
   background: #fff;
@@ -145,8 +170,14 @@ h1:focus { outline: none; }
   font-weight: 600;
   padding: 0.3rem 0.8rem;
 }
-.knopf-leise:hover { background: #eee; border-color: var(--text); }
+.knopf-gefahr { color: var(--rot); border-color: var(--rot); }
 .knopf-breit { width: 100%; }
+@media (hover: hover) {
+  .knopf:hover { background: var(--haupt-dunkel); border-color: var(--haupt-dunkel); }
+  .knopf-zweit:hover { background: var(--haupt-hell); color: var(--haupt-dunkel); }
+  .knopf-leise:hover { background: #eee; border-color: var(--text); }
+  .knopf:disabled:hover { background: #9aa6bd; border-color: #9aa6bd; }
+}
 
 .knopfreihe {
   display: flex;
@@ -156,8 +187,31 @@ h1:focus { outline: none; }
 }
 .knopfreihe .knopf { flex: 1 1 12rem; }
 
+/* Feste Leiste unten mit Zurück und Weiter (und im Player mit den Abspielknöpfen) */
+.aktionsleiste {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background: #fff;
+  border-top: 2px solid #d8d4ca;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+  padding: 0.5rem 16px calc(0.5rem + env(safe-area-inset-bottom, 0px));
+}
+.aktionsleiste-innen {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0.6rem;
+}
+.aktionsleiste-innen .knopf { flex: 1 1 0; min-width: 0; padding: 0.5rem; }
+#weiter { flex-grow: 1.6; }
+/* Fokus und Sprungziele nie hinter der Leiste */
+html { scroll-padding-bottom: calc(var(--leiste) + 1rem); }
+
 /* Fragebogen */
-.fortschritt { margin-bottom: 1rem; }
+.fortschritt { margin-bottom: 0.8rem; }
 .fortschritt-text { margin: 0 0 0.3rem; font-weight: 600; }
 .fortschritt-balken {
   height: 14px;
@@ -166,64 +220,104 @@ h1:focus { outline: none; }
   overflow: hidden;
   border: 1px solid #bdb8ab;
 }
-.fortschritt-balken span {
-  display: block;
-  height: 100%;
-  background: var(--haupt);
-}
-.frage-text { font-size: 1.3rem; margin-bottom: 1rem; }
+.fortschritt-balken span { display: block; height: 100%; background: var(--haupt); }
+.seiten-titel { font-size: 1.3rem; margin-bottom: 0.8rem; }
+.region-titel { margin-top: 1.2rem; }
 
-.wahl {
-  display: grid;
-  gap: 0.7rem;
-  margin: 0;
-  padding: 0;
-  border: 0;
+.frage-karte {
+  border: 2px solid #d8d4ca;
+  border-radius: var(--radius);
+  padding: 0.8rem 1rem 1rem;
+  margin: 0 0 1rem;
+  min-width: 0;
 }
-.wahl legend { padding: 0; margin-bottom: 0.5rem; }
+.frage-karte.folgefrage { margin-left: 1rem; border-left: 6px solid var(--haupt); }
+.frage-karte.besonders { border-color: var(--orange); border-width: 3px; }
+.frage-karte.fehlt { border-color: var(--rot); border-width: 3px; background: #fff7f8; }
+.frage-text {
+  float: left; /* legend sauber im Fluss halten */
+  width: 100%;
+  padding: 0;
+  margin: 0 0 0.7rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+.frage-text + * { clear: both; }
+.frage-text strong { font-weight: 800; }
+.frage-liste { margin: 0.4rem 0 0; padding-left: 1.4rem; font-weight: 600; }
+.frage-liste li { margin-bottom: 0.2rem; }
+.frage-absatz { display: block; margin-top: 0.5rem; }
+.frage-hinweis { clear: both; color: var(--text-leise); margin: 0 0 0.7rem; }
+.frage-achtung {
+  clear: both;
+  font-weight: 700;
+  color: #7a3000;
+  background: #fdeee3;
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  margin: 0 0 0.7rem;
+}
+.fehlt-text { color: var(--rot); font-weight: 700; margin: 0.6rem 0 0; }
+
+.wahl { display: grid; gap: 0.6rem; clear: both; }
+/* Ja, Nein, Weiß nicht immer nebeneinander in einer Reihe */
+.wahl-reihe { grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
+.wahl-reihe .wahl-knopf { justify-content: center; text-align: center; padding: 0.4rem 0.3rem; }
+.wahl-spalten { grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); }
+.skala { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.skala-enden { display: flex; justify-content: space-between; margin-top: 0.3rem; }
+
+/* Antwort: echtes Optionsfeld oder Kästchen, sichtbar als großer Knopf */
 .wahl-knopf {
-  font: inherit;
-  text-align: left;
-  min-height: 64px;
-  padding: 0.7rem 1rem 0.7rem 3.2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 60px;
+  padding: 0.5rem 0.8rem;
   border: 3px solid var(--linie);
   border-radius: 12px;
   background: #fff;
   color: var(--text);
   cursor: pointer;
-  position: relative;
   touch-action: manipulation;
+  line-height: 1.3;
 }
-.wahl-knopf::before {
-  content: "";
-  position: absolute;
-  left: 0.9rem;
-  top: 50%;
+.wahl-knopf span { min-width: 0; overflow-wrap: break-word; hyphens: auto; }
+.wahl-knopf input {
+  flex: 0 0 auto;
   width: 1.4rem;
   height: 1.4rem;
-  margin-top: -0.7rem;
-  border: 3px solid var(--linie);
-  border-radius: 50%;
-  background: #fff;
+  margin: 0;
+  accent-color: var(--haupt);
 }
-.wahl-knopf.mehrfach::before { border-radius: 6px; }
-.wahl-knopf:hover { border-color: var(--text); }
-.wahl-knopf[aria-pressed="true"] {
+.skala .wahl-knopf { justify-content: center; font-size: 1.25rem; font-weight: 700; padding: 0.5rem 0.2rem; flex-direction: column; gap: 0.2rem; }
+.wahl-leise { border-style: dashed; }
+.wahl-exklusiv { grid-column: 1 / -1; }
+.wahl-knopf:has(input:checked) {
   border-color: var(--haupt);
-  background: #e8eef9;
+  background: var(--haupt);
+  color: #fff;
   font-weight: 700;
 }
-.wahl-knopf[aria-pressed="true"]::before {
-  background: var(--haupt);
-  border-color: var(--haupt);
-  box-shadow: inset 0 0 0 4px #fff;
+.wahl-knopf:has(input:checked)::after {
+  content: "✓";
+  margin-left: auto;
+  font-weight: 800;
 }
-.wahl-knopf:disabled { opacity: 0.5; cursor: not-allowed; }
-.wahl-zwei { grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); }
-.skala { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-.skala .wahl-knopf { padding: 0.7rem 0; text-align: center; font-size: 1.3rem; font-weight: 700; }
-.skala .wahl-knopf::before { display: none; }
-.skala-enden { display: flex; justify-content: space-between; margin-top: 0.4rem; }
+.skala .wahl-knopf:has(input:checked)::after { margin-left: 0; }
+.wahl-knopf:has(input:focus-visible) {
+  outline: 3px solid var(--text);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--fokus);
+}
+.wahl-knopf input:focus-visible { box-shadow: none; outline: none; }
+.wahl-knopf.ist-gesperrt { opacity: 0.6; cursor: not-allowed; }
+@media (hover: hover) {
+  .wahl-knopf:hover { border-color: var(--text); }
+  .wahl-knopf:has(input:checked):hover { border-color: var(--haupt-dunkel); }
+}
 
 .eingabe {
   font: inherit;
@@ -234,11 +328,14 @@ h1:focus { outline: none; }
   border-radius: 12px;
   color: var(--text);
   background: #fff;
+  clear: both;
+  display: block;
 }
 .eingabe:focus { border-color: var(--haupt); }
-.feld-hinweis { margin-top: 0.5rem; }
+.eingabe[aria-invalid="true"] { border-color: var(--rot); }
+.feld-hinweis { margin: 0.4rem 0 0; }
 .meldung {
-  margin-top: 0.8rem;
+  margin: 0 0 1rem;
   padding: 0.6rem 0.8rem;
   border-left: 6px solid var(--rot);
   background: #fdecee;
@@ -250,6 +347,16 @@ h1:focus { outline: none; }
   background: #eef2fa;
   margin: 0 0 1rem;
 }
+.hinweis-box p:last-child { margin-bottom: 0; }
+
+/* Übersicht */
+.uebersicht-kopf { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem; }
+.uebersicht-kopf h2 { margin: 0; }
+.uebersicht-block dl { margin: 0; }
+.uebersicht-zeile { padding: 0.4rem 0; border-top: 1px solid #e2ded4; }
+.uebersicht-zeile dt { color: var(--text-leise); }
+.uebersicht-zeile dd { margin: 0; font-weight: 700; }
+.uebersicht-zeile.offen dd { color: var(--rot); }
 
 /* Ampel */
 .ampel {
@@ -270,7 +377,8 @@ h1:focus { outline: none; }
   display: grid;
   place-items: center;
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  line-height: 1;
 }
 .ampel h1 { margin-bottom: 0.3rem; }
 .ampel-gruen { border-color: var(--gruen); background: #e9f4eb; }
@@ -312,16 +420,19 @@ details.hinter li { margin-bottom: 0.3rem; }
 code { font-size: 20px; background: #eee; padding: 0 0.2rem; border-radius: 4px; word-break: break-word; }
 
 /* Plan */
+.plan-kopf { border-color: var(--haupt); }
+.plan-summe { font-size: 1.15rem; font-weight: 700; }
 .plan-liste { list-style: none; padding: 0; margin: 0; }
 .plan-eintrag { margin-bottom: 0.9rem; }
 .plan-eintrag h3 { margin-bottom: 0.4rem; }
-.marken { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; }
+.marken { margin-bottom: 0.4rem; }
 .marke-entscheidung {
   display: inline-block;
   font-weight: 700;
   border-radius: 999px;
   padding: 0.05rem 0.7rem;
   border: 2px solid;
+  margin-right: 0.3rem;
 }
 .e-frei { border-color: var(--gruen); color: var(--gruen); background: #e9f4eb; }
 .e-info { border-color: var(--haupt); color: var(--haupt); background: #eef2fa; }
@@ -347,9 +458,9 @@ code { font-size: 20px; background: #eee; padding: 0 0.2rem; border-radius: 4px;
 }
 .player-titel { margin-bottom: 0.2rem; }
 .untertitel {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  min-height: 6.5rem;
+  min-height: 6rem;
   background: var(--flaeche);
   border-radius: var(--radius);
   padding: 1rem;
@@ -357,40 +468,33 @@ code { font-size: 20px; background: #eee; padding: 0 0.2rem; border-radius: 4px;
 }
 .zeit { font-variant-numeric: tabular-nums; font-weight: 700; }
 .player-knoepfe {
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.7rem;
+  gap: 0.5rem;
 }
-.player-knoepfe .knopf { min-height: 76px; padding: 0.4rem; }
-.symbol { display: block; font-size: 1.5rem; line-height: 1; margin-bottom: 0.2rem; }
-
-/* Fester Hinweis */
-.hinweis-fest {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 5;
-  background: #222;
-  color: #fff;
-  font-size: 20px;
-  line-height: 1.35;
-  padding: 0.45rem 16px;
-  text-align: center;
-  border-top: 3px solid var(--fokus);
-}
+.player-knoepfe .knopf { min-height: 64px; padding: 0.3rem; line-height: 1.2; }
+.player-knoepfe .knopf-spielen { grid-column: 1 / -1; min-height: 68px; }
+.symbol { display: block; font-size: 1.3rem; line-height: 1; margin-bottom: 0.15rem; }
+.knopf-spielen .symbol { display: inline; margin: 0 0.5rem 0 0; }
+body.mit-player .inhalt { padding-bottom: calc(var(--leiste) * 2 + 1.5rem); }
 
 @media (max-width: 480px) {
-  html { font-size: 21px; }
-  .inhalt { padding-bottom: 8.5rem; }
-  .frage-text { font-size: 1.2rem; }
-  /* Abspielen oben über die volle Breite, darunter Wiederholen und Nächste Übung */
-  .player-knoepfe { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .player-knoepfe #spielen { grid-column: 1 / -1; order: -1; }
-  .kopf-werkzeuge { width: 100%; }
-  .beispiel { flex: 1 1 10rem; min-width: 0; }
+  html { font-size: 131.25%; } /* 21 px */
+  .frage-karte { padding: 0.7rem 0.7rem 0.8rem; }
+  .ampel h1 { font-size: 1.2rem; }
+  .ampel-licht { width: 2.6rem; height: 2.6rem; font-size: 1.2rem; }
+  .frage-karte.folgefrage { margin-left: 0.4rem; }
+  .wahl-spalten { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wahl-spalten .wahl-knopf { padding: 0.5rem 0.5rem; gap: 0.4rem; }
+  /* Auf schmalen Bildschirmen zeigt die Füllung die Wahl, der Kreis würde nur Platz kosten */
+  .wahl-reihe .wahl-knopf input,
+  .wahl-spalten .wahl-knopf input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .wahl-spalten .wahl-knopf { padding: 0.5rem 0.6rem; }
+  .wahl-knopf span { overflow-wrap: normal; }
+  .player-knoepfe .knopf { font-size: 20px; padding: 0.2rem 0.1rem; }
+  .wahl-reihe .wahl-knopf:has(input:checked)::after { margin-left: 0.3rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; animation: none !important; }
+  * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
