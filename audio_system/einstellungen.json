@@ -1,0 +1,15 @@
+{
+  "vorlauf_s": 1.0,
+  "nachlauf_s": 2.0,
+  "pause_zwischen_bausteinen_s": 15.0,
+  "ziel_rms_dbfs": -20.0,
+  "fade_ms": 15,
+  "raumton": true,
+  "formate": ["wav", "mp3"],
+  "mp3_bitrate": "128k",
+  "cue_sicherheitsabstand_s": 1.0,
+  "max_sprechtempo_wps": 2.8,
+  "min_sprechtempo_wps": 1.0,
+  "min_snr_db": 20.0,
+  "stille_pause_warnung_s": 2.5
+}

@@ -1,0 +1,322 @@
+{
+  "id": "HB02",
+  "version": 2,
+  "status": "entwurf_nicht_freigegeben",
+  "titel": "Beinstrecker dehnen mit Theraband (Seitenlage)",
+  "kategorie": "dehnen_vorne",
+  "material": [
+    "Theraband (optional)",
+    "rutschfeste Unterlage"
+  ],
+  "position": "seitenlage",
+  "sprechtempo_woerter_pro_sekunde": 2,
+  "haltezeit_gesamt_s": 90,
+  "empfohlene_haeufigkeit": "alle 2 Tage",
+  "belastet_regionen": ["hueft", "knie", "ruecken", "oberschenkel_wade"],
+  "bild_vorgaben": [
+    "Seitenlage mit gerader Linie",
+    "Band am Fußgelenk",
+    "Endposition Ferse am Gesäß"
+  ],
+  "stufen_zuordnung": [
+    {
+      "zustand": "thrombose_verdacht",
+      "stufe": 1,
+      "hinweis": "Kein automatischer Plan, persönliche Entscheidung"
+    },
+    {
+      "zustand": "hueft_oder_knie_op_unter_3_monate",
+      "stufe": 1,
+      "hinweis": "Nur mit Freigabe des Operateurs"
+    },
+    {
+      "zustand": "akuter_muskelfaserriss",
+      "stufe": 2,
+      "hinweis": "Baustein sperren"
+    },
+    {
+      "zustand": "hueftprothese_laenger_her",
+      "stufe": 3,
+      "hinweis": "Optionalen Hüft Cue weglassen, Ferse nur so weit wie angenehm, Kniebeugung nie erzwingen"
+    },
+    {
+      "zustand": "knieprothese_laenger_her",
+      "stufe": 3,
+      "hinweis": "Optionalen Hüft Cue weglassen, Ferse nur so weit wie angenehm, Kniebeugung nie erzwingen"
+    },
+    {
+      "zustand": "kniearthrose",
+      "stufe": 3,
+      "hinweis": "Optionalen Hüft Cue weglassen, Beugung nur so weit wie schmerzfrei"
+    },
+    {
+      "zustand": "rueckenprobleme_hohlkreuz",
+      "stufe": 3,
+      "hinweis": "Hinweis auf leicht angespannten Bauch betonen"
+    },
+    {
+      "zustand": "krampfneigung",
+      "stufe": 4,
+      "hinweis": "Info im Heft"
+    },
+    {
+      "zustand": "blutverduenner",
+      "stufe": 4,
+      "hinweis": "Info im Heft"
+    }
+  ],
+  "teile": [
+    {
+      "id": "einleitung",
+      "segmente": [
+        {
+          "typ": "sprechen",
+          "text": "Wir dehnen jetzt die Vorderseite des Oberschenkels. Du brauchst dein Theraband und eine rutschfeste Unterlage. Wird dir beim Hinlegen schwindelig, bleib einen Moment liegen. Hält es an, beende die Übung.",
+          "soll_dauer_s": 15
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 4
+        }
+      ]
+    },
+    {
+      "id": "block_rechts",
+      "seite": "rechts",
+      "segmente": [
+        {
+          "typ": "sprechen",
+          "text": "Lege dich auf die linke Seite. Dein Körper bildet eine gerade Linie von Kopf bis zu den Füßen. Der Kopf ruht auf deinem Arm oder einem Kissen. Das untere Bein ist leicht angewinkelt, damit du stabil liegst.",
+          "soll_dauer_s": 17.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 4
+        },
+        {
+          "typ": "sprechen",
+          "text": "Lege das Band um das Fußgelenk deines rechten Fußes, direkt über dem Knöchel. Halte beide Enden in der rechten Hand. Beuge das rechte Knie und ziehe die Ferse Richtung Gesäß. Kommst du mit der Hand schon ans Fußgelenk, brauchst du kein Band. Dann halte es einfach direkt.",
+          "soll_dauer_s": 23
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 4
+        },
+        {
+          "typ": "sprechen",
+          "text": "Das Knie bleibt auf Höhe des anderen Knies. Der Bauch ist leicht angespannt, damit du kein Hohlkreuz machst. Du spürst ein Ziehen vorne am Oberschenkel.",
+          "soll_dauer_s": 12.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 3
+        },
+        {
+          "typ": "sprechen",
+          "text": "Das Ziehen im Muskel ist unangenehm, und das ist richtig so. Auf einer Skala von null bis zehn sollte es höchstens eine Zwei sein. Schmerz in der Hüfte oder im Knie ist ein Warnsignal. Dann lass sofort locker.",
+          "soll_dauer_s": 19.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 3
+        },
+        {
+          "typ": "sprechen",
+          "text": "Jetzt halten wir neunzig Sekunden. Atme ruhig und gleichmäßig weiter.",
+          "soll_dauer_s": 4.5
+        },
+        {
+          "typ": "halten",
+          "soll_dauer_s": 90,
+          "cues": [
+            {
+              "bei_s": 10,
+              "text": "Prüfe deine Haltung. Liegst du gerade, und ist das Hohlkreuz weg?"
+            },
+            {
+              "bei_s": 22,
+              "text": "Ziehe die Ferse ein Stück näher, bis du das Ziehen vorne spürst."
+            },
+            {
+              "bei_s": 30,
+              "text": "Noch sechzig Sekunden."
+            },
+            {
+              "bei_s": 40,
+              "text": "Bleibt dein Knie auf Höhe des anderen Knies? Ist dein Körper noch eine gerade Linie?"
+            },
+            {
+              "bei_s": 50,
+              "text": "Bauch noch leicht angespannt? Lässt die Dehnung nach? Dann ziehe die Ferse ein Stück näher."
+            },
+            {
+              "bei_s": 60,
+              "text": "Noch dreißig Sekunden. Atme ruhig weiter."
+            },
+            {
+              "bei_s": 65,
+              "optional": true,
+              "ausschluss_bei": [
+                "hueftprothese_laenger_her",
+                "knieprothese_laenger_her",
+                "kniearthrose"
+              ],
+              "text": "Ferse am Gesäß? Dann schiebe die Hüfte ein Stück nach vorne, wenn es angenehm ist."
+            },
+            {
+              "bei_s": 75,
+              "text": "Kein Hohlkreuz? Knie auf Höhe des anderen?"
+            },
+            {
+              "bei_s": 80,
+              "text": "Noch zehn Sekunden."
+            }
+          ]
+        },
+        {
+          "typ": "sprechen",
+          "text": "Lasse das Band los und strecke das Bein langsam aus.",
+          "soll_dauer_s": 4.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 8
+        }
+      ]
+    },
+    {
+      "id": "wechsel",
+      "segmente": [
+        {
+          "typ": "sprechen",
+          "text": "Jetzt drehe dich vorsichtig auf die andere Seite.",
+          "soll_dauer_s": 4
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 10
+        }
+      ]
+    },
+    {
+      "id": "block_links",
+      "seite": "links",
+      "segmente": [
+        {
+          "typ": "sprechen",
+          "text": "Lege dich auf die rechte Seite. Dein Körper bildet eine gerade Linie von Kopf bis zu den Füßen. Der Kopf ruht auf deinem Arm oder einem Kissen. Das untere Bein ist leicht angewinkelt, damit du stabil liegst.",
+          "soll_dauer_s": 17.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 4
+        },
+        {
+          "typ": "sprechen",
+          "text": "Lege das Band um das Fußgelenk deines linken Fußes, direkt über dem Knöchel. Halte beide Enden in der linken Hand. Beuge das linke Knie und ziehe die Ferse Richtung Gesäß. Kommst du mit der Hand schon ans Fußgelenk, brauchst du kein Band. Dann halte es einfach direkt.",
+          "soll_dauer_s": 23
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 4
+        },
+        {
+          "typ": "sprechen",
+          "text": "Das Knie bleibt auf Höhe des anderen Knies. Der Bauch ist leicht angespannt, damit du kein Hohlkreuz machst. Du spürst ein Ziehen vorne am Oberschenkel.",
+          "soll_dauer_s": 12.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 3
+        },
+        {
+          "typ": "sprechen",
+          "text": "Das Ziehen im Muskel ist unangenehm, und das ist richtig so. Auf einer Skala von null bis zehn sollte es höchstens eine Zwei sein. Schmerz in der Hüfte oder im Knie ist ein Warnsignal. Dann lass sofort locker.",
+          "soll_dauer_s": 19.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 3
+        },
+        {
+          "typ": "sprechen",
+          "text": "Jetzt halten wir neunzig Sekunden. Atme ruhig und gleichmäßig weiter.",
+          "soll_dauer_s": 4.5
+        },
+        {
+          "typ": "halten",
+          "soll_dauer_s": 90,
+          "cues": [
+            {
+              "bei_s": 10,
+              "text": "Prüfe deine Haltung. Liegst du gerade, und ist das Hohlkreuz weg?"
+            },
+            {
+              "bei_s": 22,
+              "text": "Ziehe die Ferse ein Stück näher, bis du das Ziehen vorne spürst."
+            },
+            {
+              "bei_s": 30,
+              "text": "Noch sechzig Sekunden."
+            },
+            {
+              "bei_s": 40,
+              "text": "Bleibt dein Knie auf Höhe des anderen Knies? Ist dein Körper noch eine gerade Linie?"
+            },
+            {
+              "bei_s": 50,
+              "text": "Bauch noch leicht angespannt? Lässt die Dehnung nach? Dann ziehe die Ferse ein Stück näher."
+            },
+            {
+              "bei_s": 60,
+              "text": "Noch dreißig Sekunden. Atme ruhig weiter."
+            },
+            {
+              "bei_s": 65,
+              "optional": true,
+              "ausschluss_bei": [
+                "hueftprothese_laenger_her",
+                "knieprothese_laenger_her",
+                "kniearthrose"
+              ],
+              "text": "Ferse am Gesäß? Dann schiebe die Hüfte ein Stück nach vorne, wenn es angenehm ist."
+            },
+            {
+              "bei_s": 75,
+              "text": "Kein Hohlkreuz? Knie auf Höhe des anderen?"
+            },
+            {
+              "bei_s": 80,
+              "text": "Noch zehn Sekunden."
+            },
+            {
+              "bei_s": 85,
+              "text": "Du hast es gleich geschafft."
+            }
+          ]
+        },
+        {
+          "typ": "sprechen",
+          "text": "Lasse das Band los und strecke das Bein langsam aus.",
+          "soll_dauer_s": 4.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 8
+        }
+      ]
+    },
+    {
+      "id": "schluss",
+      "segmente": [
+        {
+          "typ": "sprechen",
+          "text": "Geschafft. Rolle dich auf den Rücken, bewege die Beine locker und setz dich dann langsam auf.",
+          "soll_dauer_s": 8
+        }
+      ]
+    }
+  ],
+  "toleranz_prozent": 10,
+  "soll_gesamtdauer_s": 428.0
+}

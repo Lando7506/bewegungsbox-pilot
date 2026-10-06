@@ -1,0 +1,3 @@
+numpy>=1.24
+# Optional, nur für die Spracherkennung als Gegenprobe (Befehl clips mit --asr):
+# faster-whisper

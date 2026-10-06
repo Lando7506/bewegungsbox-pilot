@@ -1,0 +1,95 @@
+{
+  "version": 3,
+  "status": "entwurf_fachlich_nicht_geprueft",
+  "regel": "Pro Baustein gilt die strengste zutreffende Stufe (1 vor 2 vor 3 vor 4). Globale Stufen gelten für jeden Baustein und können im Baustein nur verschärft, nie abgeschwächt werden.",
+  "stufen": [
+    {"stufe": 1, "name": "Kein automatischer Plan", "entscheidung": "manuell", "wirkung": "Lando entscheidet persönlich, ob und mit welchem Hinweis"},
+    {"stufe": 2, "name": "Baustein gesperrt", "entscheidung": "gesperrt", "wirkung": "Plan wird ohne diese Übung erstellt, wenn möglich mit Ersatz"},
+    {"stufe": 3, "name": "Warnstufe", "entscheidung": "warnung", "wirkung": "Baustein bleibt, mit Variante oder zusätzlichem Hinweis auf dem Planblatt"},
+    {"stufe": 4, "name": "Nur Info", "entscheidung": "info", "wirkung": "Hinweis im Heft, keine Änderung am Plan"}
+  ],
+  "globale_hinweise": {
+    "arztabsprache": "Empfehlung, kein Verbot. Einmal zentral im Fragebogen und auf dem Blatt in der Box, Bestätigung per Häkchen beim Kauf.",
+    "im_audio": "Nur kurze Sicherheitssätze, keine Wiederholung der Arztempfehlung"
+  },
+  "regionen": {
+    "nacken": "Nacken",
+    "schulter": "Schulter",
+    "ruecken": "Rücken",
+    "hueft": "Hüfte",
+    "knie": "Knie",
+    "oberschenkel_wade": "Oberschenkel oder Wade",
+    "fuss": "Fuß oder Knöchel"
+  },
+  "region_unklar": {
+    "stufe": 3,
+    "regel": "Hat jemand eine Körperregion angegeben und keine Folgefrage erklärt das Problem genauer, entsteht der Zustand region_unklar_<region>. Jeder Baustein, der diese Region in belastet_regionen nennt, bekommt mindestens Stufe 3. Ein Baustein darf strenger sein, nie milder. Unbekannt gilt nicht als unproblematisch.",
+    "intern_hinweis": "Beschwerden in dieser Region angegeben, Genaueres nicht bekannt. Beim Rückruf klären."
+  },
+  "zustaende": {
+    "thrombose_verdacht": {"name": "Verdacht auf Thrombose", "stufe_global": 1, "quelle": "Chat 02.10.2026"},
+    "hueft_oder_knie_op_unter_3_monate": {"name": "Hüft oder Knie OP vor weniger als 3 Monaten", "stufe_global": 1, "quelle": "Chat 02.10.2026, Fragebogen R1"},
+    "ruecken_schulter_op_unter_3_monate": {"name": "Rücken oder Schulter OP vor weniger als 3 Monaten", "stufe_global": 1, "quelle": "Fragebogen R1"},
+    "ischias_notfallzeichen": {"name": "Taubheit im Schritt, Blasen oder Darmprobleme, zunehmende Lähmung im Bein", "stufe_global": 1, "quelle": "Chat 02.10.2026"},
+    "neuer_unklarer_schwindel": {"name": "Neuer oder ungeklärter Schwindel", "stufe_global": 1, "quelle": "Fragebogen R2"},
+    "brustschmerz_atemnot_belastung": {"name": "Brustschmerz, Engegefühl oder Atemnot bei leichter Belastung", "stufe_global": 1, "quelle": "Fragebogen R3"},
+    "herzinfarkt_schlaganfall_herz_op_unter_6_monate": {"name": "Herzinfarkt, Schlaganfall oder Herz OP in den letzten 6 Monaten", "stufe_global": 1, "quelle": "Fragebogen R4"},
+    "sturz_unter_12_monate_ungeklaert": {"name": "Sturz in den letzten 12 Monaten, nicht ärztlich abgeklärt", "stufe_global": 1, "quelle": "Fragebogen R5"},
+    "knochenbruch_unter_3_monate": {"name": "Wirbelbruch oder anderer Knochenbruch in den letzten 3 Monaten", "stufe_global": 1, "quelle": "Fragebogen R6"},
+    "starke_neue_schmerzen_in_ruhe": {"name": "Aktuell starke oder neue Schmerzen, auch in Ruhe", "stufe_global": 1, "quelle": "Fragebogen R7"},
+    "arzt_riet_von_training_ab": {"name": "Arzt hat aktuell von Bewegung oder Training abgeraten", "stufe_global": 1, "quelle": "Fragebogen R8"},
+    "kann_sich_im_bett_nicht_selbst_drehen": {"name": "Kann sich im Bett nicht selbstständig drehen oder aufsetzen", "stufe_global": 1, "quelle": "Fragebogen R9"},
+    "osteoporose_ohne_freigabe": {"name": "Osteoporose oder früherer Wirbelbruch ohne ärztliche Freigabe", "stufe_global": 1, "quelle": "Fragebogen G3"},
+
+    "hueftprothese_laenger_her": {"name": "Künstliches Hüftgelenk, OP länger als 3 Monate her", "quelle": "Fragebogen G1",
+      "intern_hinweis": "Keine tiefe Hüftbeugung, kein Überkreuzen der Beine, keine Drehbewegungen der Hüfte. Einschränkungen des Operateurs erfragen."},
+    "knieprothese_laenger_her": {"name": "Künstliches Kniegelenk", "quelle": "Fragebogen G2",
+      "intern_hinweis": "Kein tiefes Beugen. Entwurf, Fachperson prüfen."},
+    "osteoporose_mit_freigabe": {"name": "Osteoporose oder früherer Wirbelbruch, ärztliche Freigabe liegt vor", "quelle": "Fragebogen G3",
+      "intern_hinweis": "Keine starke Rumpfbeugung, keine Wirbelsäulendrehung. Details der Freigabe klären."},
+    "schulterprobleme": {"name": "Schulterprobleme oder Schulteroperation", "quelle": "Fragebogen G4",
+      "intern_hinweis": "Keine Überkopf und Zugübungen an der Schulter, passende Bausteine prüfen."},
+    "blutverduenner": {"name": "Blutverdünner", "quelle": "Fragebogen G5",
+      "intern_hinweis": "Hinweis auf Verletzungs und Sturzvorsicht, kein Banddruck auf der Haut."},
+    "diabetes_mit_unterzucker": {"name": "Diabetes mit Unterzuckerungen", "quelle": "Fragebogen G6",
+      "intern_hinweis": "Nicht auf nüchternen Magen üben, Traubenzucker bereithalten."},
+    "starke_sehschwaeche": {"name": "Starke Sehschwäche", "quelle": "Fragebogen G7",
+      "intern_hinweis": "Audio zuerst, sehr große Schrift, Begleitperson empfehlen."},
+    "schwindel_beim_hinlegen": {"name": "Schwindel beim Hinlegen oder Aufstehen, bekannt und abgeklärt", "quelle": "Fragebogen G8",
+      "intern_hinweis": "Übergänge sehr langsam, Kopfteil erhöhen."},
+    "herzschwaeche_reflux_atemnot_liegend": {"name": "Herzschwäche, Reflux oder Atemnot im Liegen", "quelle": "Fragebogen G9",
+      "intern_hinweis": "Rückenlage nur mit erhöhtem Kopfteil."},
+    "sturz_unter_12_monate_abgeklaert": {"name": "Sturz in den letzten 12 Monaten, ärztlich abgeklärt", "quelle": "Fragebogen G10",
+      "intern_hinweis": "Start mit Sitz und Bettprogramm, feste Stütze."},
+    "gelenkschmerz_bei_bewegung": {"name": "Gelenkprobleme mit Schmerz bei Bewegung", "quelle": "Fragebogen G11",
+      "intern_hinweis": "Kleinere Bewegungsradien, Schmerzgrenze betonen."},
+    "latexallergie": {"name": "Latexallergie", "quelle": "Fragebogen G12",
+      "intern_hinweis": "Latexfreies Band beilegen."},
+    "akuter_muskelfaserriss": {"name": "Akuter Muskelfaserriss", "quelle": "Chat 02.10.2026"},
+    "ischias_beschwerden": {"name": "Ischias Beschwerden", "quelle": "Chat 02.10.2026"},
+    "kniearthrose": {"name": "Kniearthrose", "quelle": "Chat 02.10.2026"},
+    "rueckenprobleme_hohlkreuz": {"name": "Rückenprobleme mit empfindlichem Hohlkreuz", "quelle": "Chat 02.10.2026"},
+    "krampfneigung": {"name": "Neigung zu Muskelkrämpfen", "quelle": "Chat 02.10.2026"},
+    "standunsicher": {"name": "Fühlt sich beim Stehen oft unsicher", "quelle": "Fragebogen C4 (Dokument 13)",
+      "intern_hinweis": "Für Steh und Gehübungen wichtig. Bei Dehnungen im Liegen nur Info."},
+    "nackenprobleme": {"name": "Schmerzen oder Probleme beim Kopfdrehen", "quelle": "Fragebogen E11 (Vorschlag, Entwurf 4)"},
+    "region_unklar_nacken": {"name": "Beschwerden im Nacken, Genaueres unklar", "quelle": "Regel region_unklar"},
+    "region_unklar_schulter": {"name": "Beschwerden in der Schulter, Genaueres unklar", "quelle": "Regel region_unklar"},
+    "region_unklar_ruecken": {"name": "Beschwerden im Rücken, Genaueres unklar", "quelle": "Regel region_unklar"},
+    "region_unklar_hueft": {"name": "Beschwerden in der Hüfte, Genaueres unklar", "quelle": "Regel region_unklar"},
+    "region_unklar_knie": {"name": "Beschwerden im Knie, Genaueres unklar", "quelle": "Regel region_unklar"},
+    "region_unklar_oberschenkel_wade": {"name": "Beschwerden an Oberschenkel oder Wade, Genaueres unklar", "quelle": "Regel region_unklar"},
+    "region_unklar_fuss": {"name": "Beschwerden an Fuß oder Knöchel, Genaueres unklar", "quelle": "Regel region_unklar"}
+  },
+  "lint": {
+    "pflicht_vor_halten": ["schmerz"],
+    "pflicht_in_einleitung_bei_position": {"rueckenlage": ["schwindel"], "seitenlage": ["schwindel"]},
+    "verbotene_muster": [
+      "schmerzfrei", "schmerzlos", "therap", "behandl", "\\bheil(t|en|ung)\\b", "\\brehab", "\\breha\\b",
+      "diagnos", "verhinder", "sturzrisiko", "sturz\\w*\\s+vor", "nie wieder", "garantier", "mit sicherheit",
+      "\\blindert", "\\bersetzt\\b", "gegen\\s+(arthrose|osteoporose|rückenschmerz)"
+    ],
+    "fachbegriffe": ["hamstring", "quadrizeps", "beinbeuger", "beinstrecker", "hüftbeuger", "rotation", "pressatmung", "flexion", "extension", "adduktion", "abduktion", "faszie"],
+    "max_woerter_pro_satz": 25
+  }
+}

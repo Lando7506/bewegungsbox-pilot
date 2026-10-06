@@ -1,0 +1,112 @@
+{
+  "id": "KU05",
+  "version": 1,
+  "status": "entwurf_nicht_freigegeben",
+  "titel": "Schulterheben (Kraft, 2 Sätze mit je 10 Wiederholungen)",
+  "kategorie": "kraft_arme",
+  "material": [],
+  "position": "sitzen_stehen",
+  "sprechtempo_woerter_pro_sekunde": 2,
+  "haltezeit_gesamt_s": 0,
+  "empfohlene_haeufigkeit": "offen (täglich oder alle 2 Tage, OP-B18)",
+  "belastet_regionen": [
+    "schulter",
+    "nacken"
+  ],
+  "_hinweis": "Vorschlag des Systemchats aus Dokument 18. belastet_regionen und stufen_zuordnung sind NICHT fachlich geprüft und bewusst knapp. Der Satz zum Schmerzhinweis ist ergänzt, im Skript fehlte er. Entwurf, noch nicht aufgenommen.",
+  "bild_vorgaben": [
+    "Ausgangslage",
+    "Endposition"
+  ],
+  "stufen_zuordnung": [
+    {
+      "zustand": "akuter_muskelfaserriss",
+      "stufe": 2,
+      "hinweis": "Baustein sperren (Vorschlag)"
+    },
+    {
+      "zustand": "schulterprobleme",
+      "stufe": 3,
+      "hinweis": "Hinweis auf dem Planblatt (Vorschlag)"
+    }
+  ],
+  "teile": [
+    {
+      "id": "satz_1",
+      "segmente": [
+        {
+          "typ": "sprechen",
+          "text": "Wir machen jetzt Schulterheben, im Sitzen oder im Stehen. Sitz oder steh aufrecht, die Arme hängen locker an den Seiten. Bei Schmerz hör sofort auf.",
+          "soll_dauer_s": 12.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 4
+        },
+        {
+          "typ": "sprechen",
+          "text": "Zieh die Schultern bis zu den Ohren, halte kurz und senke sie langsam. Ich zähle alle vier Sekunden. Mach nur, was du schaffst. Los geht's.",
+          "soll_dauer_s": 12.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 2
+        },
+        {
+          "typ": "wiederholungen",
+          "modus": "zaehlen",
+          "anzahl": 10,
+          "takt_s": 4,
+          "soll_dauer_s": 40
+        },
+        {
+          "typ": "sprechen",
+          "text": "Sehr gut. Atme ruhig.",
+          "soll_dauer_s": 2.0
+        },
+        {
+          "typ": "satzpause",
+          "soll_dauer_s": 60,
+          "cues": [
+            {
+              "bei_s": 20,
+              "text": "Atme ruhig. Du machst das gut."
+            },
+            {
+              "bei_s": 50,
+              "text": "Gleich noch ein Satz. Du schaffst das."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "satz_2",
+      "segmente": [
+        {
+          "typ": "sprechen",
+          "text": "Los geht's mit dem zweiten Satz. Bei Schmerz hör sofort auf.",
+          "soll_dauer_s": 5.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 2
+        },
+        {
+          "typ": "wiederholungen",
+          "modus": "zaehlen",
+          "anzahl": 10,
+          "takt_s": 4,
+          "soll_dauer_s": 40
+        },
+        {
+          "typ": "sprechen",
+          "text": "Super gemacht. Schüttel deine Schultern locker aus.",
+          "soll_dauer_s": 3.5
+        }
+      ]
+    }
+  ],
+  "toleranz_prozent": 10,
+  "soll_gesamtdauer_s": 184.0
+}

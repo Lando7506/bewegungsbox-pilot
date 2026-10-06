@@ -1,0 +1,88 @@
+{
+  "id": "ZAHLEN",
+  "version": 1,
+  "status": "entwurf_nicht_freigegeben",
+  "gemeinsam": true,
+  "titel": "Zahlen eins bis zwölf (gemeinsam für alle zählenden Übungen)",
+  "kategorie": "gemeinsam",
+  "material": [],
+  "position": "gemeinsam",
+  "sprechtempo_woerter_pro_sekunde": 2,
+  "haltezeit_gesamt_s": 0,
+  "toleranz_prozent": 10,
+  "empfohlene_haeufigkeit": "nicht zutreffend",
+  "belastet_regionen": [
+    "hueft"
+  ],
+  "_hinweis": "Kein Übungsbaustein. Die Aufnahmen werden von allen Bausteinen mit Zählmodus verwendet. Nicht in Pläne aufnehmen.",
+  "bild_vorgaben": [],
+  "stufen_zuordnung": [],
+  "teile": [
+    {
+      "id": "zahlen",
+      "segmente": [
+        {
+          "typ": "sprechen",
+          "text": "eins",
+          "soll_dauer_s": 0.5
+        },
+        {
+          "typ": "sprechen",
+          "text": "zwei",
+          "soll_dauer_s": 0.5
+        },
+        {
+          "typ": "sprechen",
+          "text": "drei",
+          "soll_dauer_s": 0.5
+        },
+        {
+          "typ": "sprechen",
+          "text": "vier",
+          "soll_dauer_s": 0.5
+        },
+        {
+          "typ": "sprechen",
+          "text": "fünf",
+          "soll_dauer_s": 0.5
+        },
+        {
+          "typ": "sprechen",
+          "text": "sechs",
+          "soll_dauer_s": 0.5
+        },
+        {
+          "typ": "sprechen",
+          "text": "sieben",
+          "soll_dauer_s": 0.5
+        },
+        {
+          "typ": "sprechen",
+          "text": "acht",
+          "soll_dauer_s": 0.5
+        },
+        {
+          "typ": "sprechen",
+          "text": "neun",
+          "soll_dauer_s": 0.5
+        },
+        {
+          "typ": "sprechen",
+          "text": "zehn",
+          "soll_dauer_s": 0.5
+        },
+        {
+          "typ": "sprechen",
+          "text": "elf",
+          "soll_dauer_s": 0.5
+        },
+        {
+          "typ": "sprechen",
+          "text": "zwölf",
+          "soll_dauer_s": 0.5
+        }
+      ]
+    }
+  ],
+  "soll_gesamtdauer_s": 6.0
+}

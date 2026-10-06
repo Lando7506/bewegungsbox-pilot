@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+demo_workspace/
+ausgabe/*
+!ausgabe/.gitkeep
+clips/*
+!clips/.gitkeep

@@ -1,0 +1,2064 @@
+{
+  "version": 4,
+  "status": "entwurf_fachlich_nicht_geprueft",
+  "hinweis": "Fragebogen Entwurf 4 als Daten. Fragetexte und IDs aus Dokument 13, neu sind R0, E3h, E3k, E3f, E9, E10, E11 die Reihenfolge und, nach dem Hinweis des Gegenlesers vom 06.10.2026, der Block P (Schmerz genauer: P0, P1 bis P3 je Region). Aus diesen Daten wird das Dokument erzeugt (python -m audiosystem fragebogen-doc). Alles Medizinische ist Entwurf.",
+  "gesundheitsbereiche": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "M",
+    "R",
+    "P"
+  ],
+  "schritte": [
+    {
+      "nr": 0,
+      "titel": "Einwilligung und Kontakt"
+    },
+    {
+      "nr": 1,
+      "titel": "Sicherheit und Grundlagen, für alle"
+    },
+    {
+      "nr": 2,
+      "titel": "Körperkarte"
+    },
+    {
+      "nr": 3,
+      "titel": "Folgefragen je gewählter Region"
+    },
+    {
+      "nr": 4,
+      "titel": "Schmerz genauer, je gewählter Region"
+    },
+    {
+      "nr": 5,
+      "titel": "Alltag und Ziel"
+    }
+  ],
+  "orange_codes": {
+    "O1": "Keine Vollmacht oder Betreuung, jemand anderes füllt aus",
+    "O2": "Gelenkersatz Hüfte, Operateur nannte Bewegungsgrenzen oder unbekannt",
+    "O3": "Osteoporose, ärztliche Freigabe unbekannt",
+    "O4": "Zustände aus drei oder mehr verschiedenen Gruppen",
+    "O5": "Abgeklärter Sturz und große Angst zu stürzen (4 oder 5)",
+    "O6": "Alter 90 oder älter und mindestens ein Gelb Zustand",
+    "O7": "Widerspruch in den Angaben",
+    "O10": "Neue, noch nicht ärztlich angeschaute Schmerzen",
+    "O11": "Weiß nicht bei einer Frage, die zu Rot führen kann",
+    "O12": "Atemnot im Liegen oder unbekannt",
+    "O13": "Schmerz in einer Region wird in den letzten Wochen schlechter"
+  },
+  "ampel": {
+    "o4_min_gruppen": 3,
+    "o5_skala_min": 4,
+    "o6_alter": 90,
+    "o7_widersprueche": [
+      {
+        "wenn": {
+          "C4": "nie",
+          "C6": "rollator"
+        },
+        "text": "Nie unsicher beim Stehen, aber Rollator"
+      }
+    ],
+    "noch_nicht_geprueft": [
+      "O8 Ausstattung (braucht die Antworten aus Stufe 2)",
+      "O9 Baubarkeit (Kernbausteine für Kraft und Gleichgewicht fehlen noch, Dokument 12 Abschnitt 6)",
+      "Widersprüche, die Stufe 2 betreffen (Dokument 12 Abschnitt 4)"
+    ],
+    "zaehlgruppen": {
+      "Gelenkersatz": [
+        "hueftprothese_laenger_her",
+        "knieprothese_laenger_her"
+      ],
+      "Gelenke": [
+        "gelenkschmerz_bei_bewegung",
+        "kniearthrose",
+        "schulterprobleme",
+        "region_unklar_hueft",
+        "region_unklar_knie",
+        "region_unklar_schulter",
+        "region_unklar_fuss"
+      ],
+      "Sturz und Schwindel": [
+        "sturz_unter_12_monate_abgeklaert",
+        "standunsicher",
+        "schwindel_beim_hinlegen"
+      ],
+      "Kreislauf, Blut, Stoffwechsel": [
+        "blutverduenner",
+        "herzschwaeche_reflux_atemnot_liegend",
+        "diabetes_mit_unterzucker"
+      ],
+      "Knochen": [
+        "osteoporose_mit_freigabe"
+      ],
+      "Rücken und Muskeln": [
+        "ischias_beschwerden",
+        "akuter_muskelfaserriss",
+        "rueckenprobleme_hohlkreuz",
+        "krampfneigung",
+        "nackenprobleme",
+        "region_unklar_ruecken",
+        "region_unklar_nacken",
+        "region_unklar_oberschenkel_wade"
+      ]
+    }
+  },
+  "notfallhinweis": "Bitte lass diese Beschwerden zeitnah ärztlich abklären. Bei plötzlicher Atemnot, Brustschmerz oder einer Lähmung ruf den Notruf 112.",
+  "ziele": {
+    "aufstehen_hinsetzen": {
+      "text": "sicherer aufstehen und hinsetzen",
+      "aus_z1": [
+        "aufstehen_sofa_stuhl",
+        "hinsetzen"
+      ]
+    },
+    "treppen": {
+      "text": "Treppen leichter steigen",
+      "aus_z1": [
+        "treppen"
+      ]
+    },
+    "schuhe": {
+      "text": "Schuhe wieder leichter selbst anziehen",
+      "aus_z1": [
+        "schuhe_anziehen"
+      ]
+    },
+    "einkaufen": {
+      "text": "wieder selbst einkaufen gehen",
+      "aus_z1": [
+        "einkaufen"
+      ]
+    },
+    "spazieren": {
+      "text": "wieder spazieren gehen",
+      "aus_z1": [
+        "spazierengehen"
+      ]
+    },
+    "umdrehen": {
+      "text": "leichter im Bett umdrehen",
+      "aus_z1": [
+        "umdrehen_bett"
+      ]
+    },
+    "steif": {
+      "text": "weniger steif sein",
+      "wenn_z2_nicht_leer": true
+    },
+    "morgens": {
+      "text": "morgens beweglicher sein",
+      "wenn_z1_und_z2_leer": true
+    }
+  },
+  "fragen": [
+    {
+      "id": "W1",
+      "bereich": "W",
+      "text": "Ich willige ausdrücklich ein, dass die Gesundheitsangaben zur Erstellung des Plans verarbeitet werden, einschließlich möglicher Rückfragen durch einen automatischen Assistenten.",
+      "typ": "ja_nein",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "nein": {
+          "stopp": "Ohne Einwilligung kein Fortfahren"
+        }
+      },
+      "schritt": 0
+    },
+    {
+      "id": "W2",
+      "bereich": "W",
+      "text": "Mir ist klar, dass dieses Programm keine ärztliche Behandlung ersetzt.",
+      "typ": "ja_nein",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "nein": {
+          "stopp": "Ohne Bestätigung kein Fortfahren"
+        }
+      },
+      "schritt": 0
+    },
+    {
+      "id": "W3",
+      "bereich": "W",
+      "text": "Wer füllt aus?",
+      "typ": "auswahl",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "optionen": [
+        {
+          "wert": "selbst",
+          "text": "Die Person selbst"
+        },
+        {
+          "wert": "jemand_anderes",
+          "text": "Jemand anderes für die Person"
+        }
+      ],
+      "schritt": 0
+    },
+    {
+      "id": "W3a",
+      "bereich": "W",
+      "text": "Gibt es eine Vollmacht oder eine rechtliche Betreuung?",
+      "typ": "ja_nein",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "nur_wenn": {
+        "frage": "W3",
+        "wert": "jemand_anderes"
+      },
+      "wirkung": {
+        "nein": {
+          "orange": [
+            "O1"
+          ]
+        }
+      },
+      "schritt": 0
+    },
+    {
+      "id": "W3b",
+      "bereich": "W",
+      "text": "Dein Vorname",
+      "typ": "text",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "nur_wenn": {
+        "frage": "W3",
+        "wert": "jemand_anderes"
+      },
+      "schritt": 0
+    },
+    {
+      "id": "K1",
+      "bereich": "K",
+      "text": "Vorname der Person, die trainieren soll",
+      "typ": "text",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "schritt": 0
+    },
+    {
+      "id": "K2",
+      "bereich": "K",
+      "text": "Geburtsjahr der Person",
+      "typ": "zahl",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "min": 1900,
+      "max": 2026,
+      "schritt": 0
+    },
+    {
+      "id": "K3",
+      "bereich": "K",
+      "text": "E-Mail für die Auswertung",
+      "typ": "text",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "schritt": 0
+    },
+    {
+      "id": "K4",
+      "bereich": "K",
+      "text": "Telefonnummer für eine mögliche Rückfrage",
+      "typ": "text",
+      "pflicht": false,
+      "quelle": "entwurf3",
+      "schritt": 0
+    },
+    {
+      "id": "K5",
+      "bereich": "K",
+      "text": "Möchtest du Neuigkeiten per E-Mail bekommen?",
+      "typ": "ja_nein",
+      "pflicht": false,
+      "quelle": "entwurf3",
+      "schritt": 0
+    },
+    {
+      "id": "A1",
+      "bereich": "A",
+      "text": "Gab es in den letzten 3 Monaten eine Operation an Hüfte, Knie, Rücken oder Schulter?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "hueft_oder_knie_op_unter_3_monate",
+            "ruecken_schulter_op_unter_3_monate"
+          ],
+          "rot": "Operation in den letzten 3 Monaten"
+        },
+        "wn": {
+          "orange": [
+            "O11"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "A2",
+      "bereich": "A",
+      "text": "Gibt es ein künstliches Hüftgelenk?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "region": [
+        "hueft"
+      ],
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "hueftprothese_laenger_her"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "hueftprothese_laenger_her"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "A2a",
+      "bereich": "A",
+      "text": "Hat der Operateur Bewegungen genannt, die vermieden werden sollen?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "nur_wenn": {
+        "frage": "A2",
+        "wert": "ja"
+      },
+      "region": [
+        "hueft"
+      ],
+      "wirkung": {
+        "ja": {
+          "orange": [
+            "O2"
+          ]
+        },
+        "wn": {
+          "orange": [
+            "O2"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "A3",
+      "bereich": "A",
+      "text": "Gibt es ein künstliches Kniegelenk?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "region": [
+        "knie"
+      ],
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "knieprothese_laenger_her"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "knieprothese_laenger_her"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "B1",
+      "bereich": "B",
+      "text": "Treten Brustschmerzen, Engegefühl oder Atemnot schon bei leichter Belastung auf, zum Beispiel auf der Treppe oder beim Anziehen?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "brustschmerz_atemnot_belastung"
+          ],
+          "rot": "Brustschmerz oder Atemnot bei leichter Belastung",
+          "notfall": true
+        },
+        "wn": {
+          "orange": [
+            "O11"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "B2",
+      "bereich": "B",
+      "text": "Gab es in den letzten 6 Monaten einen Herzinfarkt, einen Schlaganfall oder eine Herzoperation?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "herzinfarkt_schlaganfall_herz_op_unter_6_monate"
+          ],
+          "rot": "Herzinfarkt, Schlaganfall oder Herzoperation in den letzten 6 Monaten"
+        },
+        "wn": {
+          "orange": [
+            "O11"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "B3",
+      "bereich": "B",
+      "text": "Gibt es eine Herzschwäche oder Sodbrennen im Liegen (Reflux)?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "herzschwaeche_reflux_atemnot_liegend"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "herzschwaeche_reflux_atemnot_liegend"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "B4",
+      "bereich": "B",
+      "text": "Werden Blutverdünner genommen?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "blutverduenner"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "blutverduenner"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "B5",
+      "bereich": "B",
+      "text": "Ist ein Bein in letzter Zeit neu angeschwollen, warm oder schmerzhaft, und zwar nur auf einer Seite? Oder wurde eine Thrombose vermutet, die noch nicht behandelt ist?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "thrombose_verdacht"
+          ],
+          "rot": "Neue einseitige Beinschwellung oder Thromboseverdacht",
+          "notfall": true
+        },
+        "wn": {
+          "orange": [
+            "O11"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "B6",
+      "bereich": "B",
+      "text": "Kam es in letzter Zeit, etwa in den letzten 3 Monaten, zu Unterzuckerungen, zum Beispiel bei Diabetes?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "diabetes_mit_unterzucker"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "diabetes_mit_unterzucker"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "B7",
+      "bereich": "B",
+      "text": "Wird die Person beim flachen Liegen kurzatmig?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "herzschwaeche_reflux_atemnot_liegend"
+          ],
+          "orange": [
+            "O12"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "herzschwaeche_reflux_atemnot_liegend"
+          ],
+          "orange": [
+            "O12"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "C1",
+      "bereich": "C",
+      "text": "Ist ein Schwindel neu aufgetreten oder noch nicht ärztlich abgeklärt?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "neuer_unklarer_schwindel"
+          ],
+          "rot": "Neuer oder ungeklärter Schwindel",
+          "notfall": true
+        },
+        "wn": {
+          "orange": [
+            "O11"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "C2",
+      "bereich": "C",
+      "text": "Gibt es Schwindel beim Hinlegen oder Aufstehen, der ärztlich bekannt ist?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "schwindel_beim_hinlegen"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "schwindel_beim_hinlegen"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "C3",
+      "bereich": "C",
+      "text": "Gab es in den letzten 12 Monaten einen Sturz?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "wn": {
+          "orange": [
+            "O11"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "C3a",
+      "bereich": "C",
+      "text": "Hat danach ein Arzt nachgeschaut?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "nur_wenn": {
+        "frage": "C3",
+        "wert": "ja"
+      },
+      "wirkung": {
+        "nein": {
+          "zustaende": [
+            "sturz_unter_12_monate_ungeklaert"
+          ],
+          "rot": "Sturz ohne ärztliche Abklärung",
+          "strittig": true
+        },
+        "wn": {
+          "orange": [
+            "O11"
+          ]
+        },
+        "ja": {
+          "zustaende": [
+            "sturz_unter_12_monate_abgeklaert"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "C3b",
+      "bereich": "C",
+      "text": "Wann war der Sturz ungefähr?",
+      "typ": "auswahl",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "optionen": [
+        {
+          "wert": "letzte_3_monate",
+          "text": "In den letzten 3 Monaten"
+        },
+        {
+          "wert": "laenger_her",
+          "text": "Länger her"
+        }
+      ],
+      "nur_wenn": {
+        "frage": "C3",
+        "wert": "ja"
+      },
+      "hinweis": "Information für Lando und Fachperson, keine Regelwirkung",
+      "schritt": 1
+    },
+    {
+      "id": "C4",
+      "bereich": "C",
+      "text": "Fühlt sich die Person beim Stehen unsicher?",
+      "typ": "auswahl",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "optionen": [
+        {
+          "wert": "nie",
+          "text": "Nie"
+        },
+        {
+          "wert": "manchmal",
+          "text": "Manchmal"
+        },
+        {
+          "wert": "oft",
+          "text": "Oft"
+        },
+        {
+          "wert": "wn",
+          "text": "Weiß nicht"
+        }
+      ],
+      "hinweis": "Weiß nicht wird wie Manchmal behandelt (Folgefrage C4a), wirkt aber nicht auf das Niveau",
+      "wirkung": {
+        "oft": {
+          "zustaende": [
+            "standunsicher"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "C4a",
+      "bereich": "C",
+      "text": "Wie groß ist die Angst zu stürzen? (1 = keine, 5 = sehr groß)",
+      "typ": "skala",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "nur_wenn": {
+        "frage": "C4",
+        "werte": [
+          "manchmal",
+          "oft",
+          "wn"
+        ]
+      },
+      "min": 1,
+      "max": 5,
+      "schritt": 1
+    },
+    {
+      "id": "C5",
+      "bereich": "C",
+      "text": "Wie klappt das Aufstehen von einem Stuhl?",
+      "typ": "auswahl",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "optionen": [
+        {
+          "wert": "ohne_hilfe",
+          "text": "Ohne Hilfe der Arme"
+        },
+        {
+          "wert": "abstuetzen",
+          "text": "Nur mit Abstützen"
+        },
+        {
+          "wert": "fremde_hilfe",
+          "text": "Nur mit fremder Hilfe"
+        }
+      ],
+      "schritt": 1
+    },
+    {
+      "id": "C6",
+      "bereich": "C",
+      "text": "Welches Hilfsmittel wird beim Gehen genutzt?",
+      "typ": "auswahl",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "optionen": [
+        {
+          "wert": "keins",
+          "text": "Keins"
+        },
+        {
+          "wert": "stock",
+          "text": "Stock"
+        },
+        {
+          "wert": "rollator",
+          "text": "Rollator"
+        },
+        {
+          "wert": "rollstuhl",
+          "text": "Rollstuhl"
+        }
+      ],
+      "schritt": 1
+    },
+    {
+      "id": "D1",
+      "bereich": "D",
+      "text": "Gab es in den letzten 3 Monaten einen Wirbelbruch oder einen anderen Knochenbruch?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "knochenbruch_unter_3_monate"
+          ],
+          "rot": "Knochenbruch in den letzten 3 Monaten"
+        },
+        "wn": {
+          "orange": [
+            "O11"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "D2",
+      "bereich": "D",
+      "text": "Gibt es Osteoporose oder einen früheren Wirbelbruch?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "wn": {
+          "orange": [
+            "O11"
+          ],
+          "vorsicht": [
+            "osteoporose_mit_freigabe"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "D2a",
+      "bereich": "D",
+      "text": "Hat ein Arzt Bewegung ausdrücklich erlaubt?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "nur_wenn": {
+        "frage": "D2",
+        "wert": "ja"
+      },
+      "wirkung": {
+        "nein": {
+          "zustaende": [
+            "osteoporose_ohne_freigabe"
+          ],
+          "rot": "Osteoporose ohne ärztliche Freigabe",
+          "strittig": true
+        },
+        "wn": {
+          "orange": [
+            "O3"
+          ],
+          "vorsicht": [
+            "osteoporose_mit_freigabe"
+          ]
+        },
+        "ja": {
+          "zustaende": [
+            "osteoporose_mit_freigabe"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "E1",
+      "bereich": "E",
+      "text": "Gibt es starke Schmerzen, die auch in Ruhe da sind?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "starke_neue_schmerzen_in_ruhe"
+          ],
+          "rot": "Starke Schmerzen auch in Ruhe"
+        },
+        "wn": {
+          "orange": [
+            "O11"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "E2",
+      "bereich": "E",
+      "text": "Hat ein Arzt aktuell von Bewegung oder Training abgeraten?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "arzt_riet_von_training_ab"
+          ],
+          "rot": "Arzt hat von Bewegung abgeraten"
+        },
+        "wn": {
+          "orange": [
+            "O11"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "E5a",
+      "bereich": "E",
+      "text": "Gibt es eines davon: Taubheit im Gesäß oder im Schritt, neue Probleme beim Wasserlassen oder Stuhlgang, ein Bein, das immer schwächer wird?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf4",
+      "hinweis": "Neu für alle. In Entwurf 3 erschien die Frage nur nach Rückenschmerzen ins Bein",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "ischias_notfallzeichen"
+          ],
+          "rot": "Warnzeichen am Rücken oder Nerv (Taubheit im Schritt, Blase oder Darm, Schwäche im Bein)",
+          "notfall": true
+        },
+        "wn": {
+          "orange": [
+            "O11"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "E6",
+      "bereich": "E",
+      "text": "Gab es in den letzten 6 Wochen eine Muskelverletzung im Bein, zum Beispiel einen Faserriss oder eine Zerrung?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "region": [
+        "oberschenkel_wade"
+      ],
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "akuter_muskelfaserriss"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "akuter_muskelfaserriss"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "E7",
+      "bereich": "E",
+      "text": "Sind in den letzten Wochen neue Schmerzen aufgetreten, die noch kein Arzt angeschaut hat?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "ja": {
+          "orange": [
+            "O10"
+          ]
+        },
+        "wn": {
+          "orange": [
+            "O10"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "F1",
+      "bereich": "F",
+      "text": "Kann die Person sich im Bett selbstständig drehen und aufsetzen?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "nein": {
+          "zustaende": [
+            "kann_sich_im_bett_nicht_selbst_drehen"
+          ],
+          "rot": "Kann sich im Bett nicht selbstständig drehen oder aufsetzen"
+        },
+        "wn": {
+          "orange": [
+            "O11"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "M1",
+      "bereich": "M",
+      "text": "Gibt es eine Latexallergie?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "latexallergie"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "latexallergie"
+          ]
+        }
+      },
+      "schritt": 1
+    },
+    {
+      "id": "R0",
+      "bereich": "R",
+      "text": "Wo gibt es Beschwerden, eine Operation, einen Gelenkersatz oder eine Verletzung? Mehrere Bereiche sind möglich.",
+      "typ": "region_karte",
+      "pflicht": true,
+      "quelle": "entwurf4",
+      "hinweis": "Pflichtfrage. Wer nichts davon hat, wählt ausdrücklich 'Nichts davon'. Kein stilles Überspringen.",
+      "schritt": 2
+    },
+    {
+      "id": "E3h",
+      "bereich": "E",
+      "text": "Gibt es Schmerzen in der Hüfte bei Bewegung?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf4",
+      "nur_wenn": {
+        "frage": "R0",
+        "enthaelt": "hueft"
+      },
+      "region": [
+        "hueft"
+      ],
+      "hinweis": "Ersetzt E3 und E3a aus Entwurf 3 (Gelenkschmerz, an welchen Gelenken)",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "gelenkschmerz_bei_bewegung"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "gelenkschmerz_bei_bewegung"
+          ]
+        }
+      },
+      "schritt": 3
+    },
+    {
+      "id": "E3k",
+      "bereich": "E",
+      "text": "Gibt es Schmerzen im Knie bei Bewegung?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf4",
+      "nur_wenn": {
+        "frage": "R0",
+        "enthaelt": "knie"
+      },
+      "region": [
+        "knie"
+      ],
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "gelenkschmerz_bei_bewegung"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "gelenkschmerz_bei_bewegung"
+          ]
+        }
+      },
+      "schritt": 3
+    },
+    {
+      "id": "E8",
+      "bereich": "E",
+      "text": "Wurde im Knie eine Arthrose festgestellt?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "nur_wenn": {
+        "frage": "R0",
+        "enthaelt": "knie"
+      },
+      "region": [
+        "knie"
+      ],
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "kniearthrose"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "kniearthrose"
+          ]
+        }
+      },
+      "schritt": 3
+    },
+    {
+      "id": "E3f",
+      "bereich": "E",
+      "text": "Gibt es Schmerzen im Fuß oder Knöchel bei Bewegung?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "vorschlag",
+      "nur_wenn": {
+        "frage": "R0",
+        "enthaelt": "fuss"
+      },
+      "region": [
+        "fuss"
+      ],
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "gelenkschmerz_bei_bewegung"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "gelenkschmerz_bei_bewegung"
+          ]
+        }
+      },
+      "schritt": 3
+    },
+    {
+      "id": "E4",
+      "bereich": "E",
+      "text": "Gibt es Schulterprobleme oder eine Schulteroperation, die länger als 3 Monate her ist?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "nur_wenn": {
+        "frage": "R0",
+        "enthaelt": "schulter"
+      },
+      "region": [
+        "schulter"
+      ],
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "schulterprobleme"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "schulterprobleme"
+          ]
+        }
+      },
+      "schritt": 3
+    },
+    {
+      "id": "E5",
+      "bereich": "E",
+      "text": "Gibt es Rückenschmerzen, die ins Bein ausstrahlen?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "nur_wenn": {
+        "frage": "R0",
+        "enthaelt": "ruecken"
+      },
+      "region": [
+        "ruecken"
+      ],
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "ischias_beschwerden"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "ischias_beschwerden"
+          ]
+        }
+      },
+      "schritt": 3
+    },
+    {
+      "id": "E9",
+      "bereich": "E",
+      "text": "Gibt es Beschwerden im unteren Rücken, die beim Liegen oder beim Zurückbeugen stärker werden?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "vorschlag",
+      "nur_wenn": {
+        "frage": "R0",
+        "enthaelt": "ruecken"
+      },
+      "region": [
+        "ruecken"
+      ],
+      "hinweis": "Fragetext offen (OP-L12), Vorschlag",
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "rueckenprobleme_hohlkreuz"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "rueckenprobleme_hohlkreuz"
+          ]
+        }
+      },
+      "schritt": 3
+    },
+    {
+      "id": "E10",
+      "bereich": "E",
+      "text": "Neigt die Person zu Muskelkrämpfen, zum Beispiel in den Waden?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "vorschlag",
+      "nur_wenn": {
+        "frage": "R0",
+        "enthaelt": "oberschenkel_wade"
+      },
+      "region": [
+        "oberschenkel_wade"
+      ],
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "krampfneigung"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "krampfneigung"
+          ]
+        }
+      },
+      "schritt": 3
+    },
+    {
+      "id": "E11",
+      "bereich": "E",
+      "text": "Gibt es Schmerzen oder Probleme beim Drehen oder Heben des Kopfes?",
+      "typ": "ja_nein_wn",
+      "pflicht": true,
+      "quelle": "vorschlag",
+      "nur_wenn": {
+        "frage": "R0",
+        "enthaelt": "nacken"
+      },
+      "region": [
+        "nacken"
+      ],
+      "wirkung": {
+        "ja": {
+          "zustaende": [
+            "nackenprobleme"
+          ]
+        },
+        "wn": {
+          "vorsicht": [
+            "nackenprobleme"
+          ]
+        }
+      },
+      "schritt": 3
+    },
+    {
+      "id": "P0",
+      "bereich": "P",
+      "text": "Bei welchen dieser Bereiche gibt es Schmerzen? Höchstens drei auswählen, die am meisten stören. Gibt es keine Schmerzen, bitte \"Keine Schmerzen\" wählen.",
+      "typ": "region_teilauswahl",
+      "teilmenge_von": "R0",
+      "max": 3,
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "R0",
+        "hat_region": true
+      },
+      "hinweis": "Wer mehr als drei Bereiche gewählt hat, wählt hier die drei, die am meisten stören. Die übrigen Bereiche laufen wie bisher über ihre Folgefragen.",
+      "schritt": 4
+    },
+    {
+      "id": "P1n",
+      "bereich": "P",
+      "text": "Wie fühlt sich der Schmerz im Nacken an?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "stechend",
+          "text": "Stechend oder einschießend"
+        },
+        {
+          "wert": "dumpf",
+          "text": "Dumpf oder drückend"
+        },
+        {
+          "wert": "ziehend",
+          "text": "Ziehend oder brennend"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "nacken"
+      },
+      "hinweis": "Nur Hinweis für den Rückruf, keine Regelwirkung, keine Diagnose.",
+      "schritt": 4
+    },
+    {
+      "id": "P2n",
+      "bereich": "P",
+      "text": "Wie groß ist die schmerzende Stelle im Nacken?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "punktuell",
+          "text": "Punktuell, mit einem Finger zeigbar"
+        },
+        {
+          "wert": "breitflaechig",
+          "text": "Breitflächig"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "nacken"
+      },
+      "hinweis": "Nur Hinweis für den Rückruf, keine Regelwirkung.",
+      "schritt": 4
+    },
+    {
+      "id": "P3n",
+      "bereich": "P",
+      "text": "Wie hat sich der Schmerz im Nacken in den letzten Wochen entwickelt?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "besser",
+          "text": "Besser geworden"
+        },
+        {
+          "wert": "gleich",
+          "text": "Gleich geblieben"
+        },
+        {
+          "wert": "schlechter",
+          "text": "Schlechter geworden"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "nacken"
+      },
+      "hinweis": "Schlechter wird Orange (Rückruf). Weiß nicht hat keine Wirkung, die Antwort ist ein Hinweis für den Rückruf.",
+      "wirkung": {
+        "schlechter": {
+          "orange": [
+            "O13"
+          ]
+        }
+      },
+      "schritt": 4
+    },
+    {
+      "id": "P1s",
+      "bereich": "P",
+      "text": "Wie fühlt sich der Schmerz in der Schulter an?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "stechend",
+          "text": "Stechend oder einschießend"
+        },
+        {
+          "wert": "dumpf",
+          "text": "Dumpf oder drückend"
+        },
+        {
+          "wert": "ziehend",
+          "text": "Ziehend oder brennend"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "schulter"
+      },
+      "hinweis": "Nur Hinweis für den Rückruf, keine Regelwirkung, keine Diagnose.",
+      "schritt": 4
+    },
+    {
+      "id": "P2s",
+      "bereich": "P",
+      "text": "Wie groß ist die schmerzende Stelle in der Schulter?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "punktuell",
+          "text": "Punktuell, mit einem Finger zeigbar"
+        },
+        {
+          "wert": "breitflaechig",
+          "text": "Breitflächig"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "schulter"
+      },
+      "hinweis": "Nur Hinweis für den Rückruf, keine Regelwirkung.",
+      "schritt": 4
+    },
+    {
+      "id": "P3s",
+      "bereich": "P",
+      "text": "Wie hat sich der Schmerz in der Schulter in den letzten Wochen entwickelt?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "besser",
+          "text": "Besser geworden"
+        },
+        {
+          "wert": "gleich",
+          "text": "Gleich geblieben"
+        },
+        {
+          "wert": "schlechter",
+          "text": "Schlechter geworden"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "schulter"
+      },
+      "hinweis": "Schlechter wird Orange (Rückruf). Weiß nicht hat keine Wirkung, die Antwort ist ein Hinweis für den Rückruf.",
+      "wirkung": {
+        "schlechter": {
+          "orange": [
+            "O13"
+          ]
+        }
+      },
+      "schritt": 4
+    },
+    {
+      "id": "P1r",
+      "bereich": "P",
+      "text": "Wie fühlt sich der Schmerz im Rücken an?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "stechend",
+          "text": "Stechend oder einschießend"
+        },
+        {
+          "wert": "dumpf",
+          "text": "Dumpf oder drückend"
+        },
+        {
+          "wert": "ziehend",
+          "text": "Ziehend oder brennend"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "ruecken"
+      },
+      "hinweis": "Nur Hinweis für den Rückruf, keine Regelwirkung, keine Diagnose.",
+      "schritt": 4
+    },
+    {
+      "id": "P2r",
+      "bereich": "P",
+      "text": "Wie groß ist die schmerzende Stelle im Rücken?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "punktuell",
+          "text": "Punktuell, mit einem Finger zeigbar"
+        },
+        {
+          "wert": "breitflaechig",
+          "text": "Breitflächig"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "ruecken"
+      },
+      "hinweis": "Nur Hinweis für den Rückruf, keine Regelwirkung.",
+      "schritt": 4
+    },
+    {
+      "id": "P3r",
+      "bereich": "P",
+      "text": "Wie hat sich der Schmerz im Rücken in den letzten Wochen entwickelt?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "besser",
+          "text": "Besser geworden"
+        },
+        {
+          "wert": "gleich",
+          "text": "Gleich geblieben"
+        },
+        {
+          "wert": "schlechter",
+          "text": "Schlechter geworden"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "ruecken"
+      },
+      "hinweis": "Schlechter wird Orange (Rückruf). Weiß nicht hat keine Wirkung, die Antwort ist ein Hinweis für den Rückruf.",
+      "wirkung": {
+        "schlechter": {
+          "orange": [
+            "O13"
+          ]
+        }
+      },
+      "schritt": 4
+    },
+    {
+      "id": "P1h",
+      "bereich": "P",
+      "text": "Wie fühlt sich der Schmerz in der Hüfte an?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "stechend",
+          "text": "Stechend oder einschießend"
+        },
+        {
+          "wert": "dumpf",
+          "text": "Dumpf oder drückend"
+        },
+        {
+          "wert": "ziehend",
+          "text": "Ziehend oder brennend"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "hueft"
+      },
+      "hinweis": "Nur Hinweis für den Rückruf, keine Regelwirkung, keine Diagnose.",
+      "schritt": 4
+    },
+    {
+      "id": "P2h",
+      "bereich": "P",
+      "text": "Wie groß ist die schmerzende Stelle in der Hüfte?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "punktuell",
+          "text": "Punktuell, mit einem Finger zeigbar"
+        },
+        {
+          "wert": "breitflaechig",
+          "text": "Breitflächig"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "hueft"
+      },
+      "hinweis": "Nur Hinweis für den Rückruf, keine Regelwirkung.",
+      "schritt": 4
+    },
+    {
+      "id": "P3h",
+      "bereich": "P",
+      "text": "Wie hat sich der Schmerz in der Hüfte in den letzten Wochen entwickelt?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "besser",
+          "text": "Besser geworden"
+        },
+        {
+          "wert": "gleich",
+          "text": "Gleich geblieben"
+        },
+        {
+          "wert": "schlechter",
+          "text": "Schlechter geworden"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "hueft"
+      },
+      "hinweis": "Schlechter wird Orange (Rückruf). Weiß nicht hat keine Wirkung, die Antwort ist ein Hinweis für den Rückruf.",
+      "wirkung": {
+        "schlechter": {
+          "orange": [
+            "O13"
+          ]
+        }
+      },
+      "schritt": 4
+    },
+    {
+      "id": "P1k",
+      "bereich": "P",
+      "text": "Wie fühlt sich der Schmerz im Knie an?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "stechend",
+          "text": "Stechend oder einschießend"
+        },
+        {
+          "wert": "dumpf",
+          "text": "Dumpf oder drückend"
+        },
+        {
+          "wert": "ziehend",
+          "text": "Ziehend oder brennend"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "knie"
+      },
+      "hinweis": "Nur Hinweis für den Rückruf, keine Regelwirkung, keine Diagnose.",
+      "schritt": 4
+    },
+    {
+      "id": "P2k",
+      "bereich": "P",
+      "text": "Wie groß ist die schmerzende Stelle im Knie?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "punktuell",
+          "text": "Punktuell, mit einem Finger zeigbar"
+        },
+        {
+          "wert": "breitflaechig",
+          "text": "Breitflächig"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "knie"
+      },
+      "hinweis": "Nur Hinweis für den Rückruf, keine Regelwirkung.",
+      "schritt": 4
+    },
+    {
+      "id": "P3k",
+      "bereich": "P",
+      "text": "Wie hat sich der Schmerz im Knie in den letzten Wochen entwickelt?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "besser",
+          "text": "Besser geworden"
+        },
+        {
+          "wert": "gleich",
+          "text": "Gleich geblieben"
+        },
+        {
+          "wert": "schlechter",
+          "text": "Schlechter geworden"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "knie"
+      },
+      "hinweis": "Schlechter wird Orange (Rückruf). Weiß nicht hat keine Wirkung, die Antwort ist ein Hinweis für den Rückruf.",
+      "wirkung": {
+        "schlechter": {
+          "orange": [
+            "O13"
+          ]
+        }
+      },
+      "schritt": 4
+    },
+    {
+      "id": "P1w",
+      "bereich": "P",
+      "text": "Wie fühlt sich der Schmerz im Oberschenkel oder in der Wade an?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "stechend",
+          "text": "Stechend oder einschießend"
+        },
+        {
+          "wert": "dumpf",
+          "text": "Dumpf oder drückend"
+        },
+        {
+          "wert": "ziehend",
+          "text": "Ziehend oder brennend"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "oberschenkel_wade"
+      },
+      "hinweis": "Nur Hinweis für den Rückruf, keine Regelwirkung, keine Diagnose.",
+      "schritt": 4
+    },
+    {
+      "id": "P2w",
+      "bereich": "P",
+      "text": "Wie groß ist die schmerzende Stelle im Oberschenkel oder in der Wade?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "punktuell",
+          "text": "Punktuell, mit einem Finger zeigbar"
+        },
+        {
+          "wert": "breitflaechig",
+          "text": "Breitflächig"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "oberschenkel_wade"
+      },
+      "hinweis": "Nur Hinweis für den Rückruf, keine Regelwirkung.",
+      "schritt": 4
+    },
+    {
+      "id": "P3w",
+      "bereich": "P",
+      "text": "Wie hat sich der Schmerz im Oberschenkel oder in der Wade in den letzten Wochen entwickelt?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "besser",
+          "text": "Besser geworden"
+        },
+        {
+          "wert": "gleich",
+          "text": "Gleich geblieben"
+        },
+        {
+          "wert": "schlechter",
+          "text": "Schlechter geworden"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "oberschenkel_wade"
+      },
+      "hinweis": "Schlechter wird Orange (Rückruf). Weiß nicht hat keine Wirkung, die Antwort ist ein Hinweis für den Rückruf.",
+      "wirkung": {
+        "schlechter": {
+          "orange": [
+            "O13"
+          ]
+        }
+      },
+      "schritt": 4
+    },
+    {
+      "id": "P1f",
+      "bereich": "P",
+      "text": "Wie fühlt sich der Schmerz im Fuß oder Knöchel an?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "stechend",
+          "text": "Stechend oder einschießend"
+        },
+        {
+          "wert": "dumpf",
+          "text": "Dumpf oder drückend"
+        },
+        {
+          "wert": "ziehend",
+          "text": "Ziehend oder brennend"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "fuss"
+      },
+      "hinweis": "Nur Hinweis für den Rückruf, keine Regelwirkung, keine Diagnose.",
+      "schritt": 4
+    },
+    {
+      "id": "P2f",
+      "bereich": "P",
+      "text": "Wie groß ist die schmerzende Stelle im Fuß oder Knöchel?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "punktuell",
+          "text": "Punktuell, mit einem Finger zeigbar"
+        },
+        {
+          "wert": "breitflaechig",
+          "text": "Breitflächig"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "fuss"
+      },
+      "hinweis": "Nur Hinweis für den Rückruf, keine Regelwirkung.",
+      "schritt": 4
+    },
+    {
+      "id": "P3f",
+      "bereich": "P",
+      "text": "Wie hat sich der Schmerz im Fuß oder Knöchel in den letzten Wochen entwickelt?",
+      "typ": "auswahl",
+      "optionen": [
+        {
+          "wert": "besser",
+          "text": "Besser geworden"
+        },
+        {
+          "wert": "gleich",
+          "text": "Gleich geblieben"
+        },
+        {
+          "wert": "schlechter",
+          "text": "Schlechter geworden"
+        },
+        {
+          "wert": "weiss_nicht",
+          "text": "Weiß nicht"
+        }
+      ],
+      "pflicht": true,
+      "quelle": "gegenleser",
+      "nur_wenn": {
+        "frage": "P0",
+        "enthaelt": "fuss"
+      },
+      "hinweis": "Schlechter wird Orange (Rückruf). Weiß nicht hat keine Wirkung, die Antwort ist ein Hinweis für den Rückruf.",
+      "wirkung": {
+        "schlechter": {
+          "orange": [
+            "O13"
+          ]
+        }
+      },
+      "schritt": 4
+    },
+    {
+      "id": "Z1",
+      "bereich": "Z",
+      "text": "Was fällt im Alltag schwer?",
+      "typ": "mehrfach",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "optionen": [
+        {
+          "wert": "aufstehen_sofa_stuhl",
+          "text": "Aufstehen vom Sofa oder Stuhl"
+        },
+        {
+          "wert": "hinsetzen",
+          "text": "Hinsetzen"
+        },
+        {
+          "wert": "treppen",
+          "text": "Treppen"
+        },
+        {
+          "wert": "schuhe_anziehen",
+          "text": "Schuhe anziehen"
+        },
+        {
+          "wert": "einkaufen",
+          "text": "Einkaufen"
+        },
+        {
+          "wert": "spazierengehen",
+          "text": "Spazierengehen"
+        },
+        {
+          "wert": "umdrehen_bett",
+          "text": "Umdrehen im Bett"
+        }
+      ],
+      "schritt": 5
+    },
+    {
+      "id": "Z2",
+      "bereich": "Z",
+      "text": "Wo fühlt sich der Körper besonders steif an?",
+      "typ": "mehrfach",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "optionen": [
+        {
+          "wert": "nacken",
+          "text": "Nacken"
+        },
+        {
+          "wert": "schultern",
+          "text": "Schultern"
+        },
+        {
+          "wert": "ruecken",
+          "text": "Rücken"
+        },
+        {
+          "wert": "hueft",
+          "text": "Hüfte"
+        },
+        {
+          "wert": "knie",
+          "text": "Knie"
+        },
+        {
+          "wert": "fuesse",
+          "text": "Füße"
+        }
+      ],
+      "schritt": 5
+    },
+    {
+      "id": "Z3",
+      "bereich": "Z",
+      "text": "Was soll am ehesten besser werden? (bis zu zwei)",
+      "typ": "ziele",
+      "pflicht": true,
+      "quelle": "entwurf3",
+      "hinweis": "Wird nur gefragt, wenn aus Z1 und Z2 mehr als ein Ziel möglich ist",
+      "schritt": 5
+    },
+    {
+      "id": "Z4",
+      "bereich": "Z",
+      "text": "Was würde die Person gerne wieder können, was im Moment nicht geht? Bitte keine Diagnosen oder Medikamentennamen eintragen.",
+      "typ": "text",
+      "pflicht": false,
+      "quelle": "entwurf3",
+      "schritt": 5
+    }
+  ]
+}

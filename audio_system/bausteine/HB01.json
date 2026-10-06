@@ -1,0 +1,100 @@
+{
+  "id": "HB01",
+  "version": 4,
+  "status": "entwurf_nicht_freigegeben",
+  "titel": "Beinbeuger dehnen mit Theraband (Rückenlage)",
+  "kategorie": "dehnen_hinten",
+  "material": ["Theraband", "rutschfeste Unterlage"],
+  "position": "rueckenlage",
+  "sprechtempo_woerter_pro_sekunde": 2,
+  "haltezeit_gesamt_s": 90,
+  "empfohlene_haeufigkeit": "alle 2 Tage",
+  "belastet_regionen": ["hueft", "knie", "ruecken", "oberschenkel_wade"],
+  "bild_vorgaben": ["Ausgangslage", "Bandposition am Fuß", "Endposition (rechter Winkel)"],
+  "stufen_zuordnung": [
+    {"zustand": "thrombose_verdacht", "stufe": 1, "hinweis": "Kein automatischer Plan, persönliche Entscheidung"},
+    {"zustand": "hueft_oder_knie_op_unter_3_monate", "stufe": 1, "hinweis": "Nur mit Freigabe des Operateurs"},
+    {"zustand": "hueftprothese_laenger_her", "stufe": 2, "hinweis": "Bausteine mit starker Hüftbeugung sperren, Rechter Winkel nicht als Ziel"},
+    {"zustand": "akuter_muskelfaserriss", "stufe": 2, "hinweis": "Baustein sperren"},
+    {"zustand": "ischias_beschwerden", "stufe": 3, "hinweis": "Variante mit leicht gebeugtem Knie, Hinweis auf Planblatt"},
+    {"zustand": "ischias_notfallzeichen", "stufe": 1, "hinweis": "Taubheit im Schritt, Blasen oder Darmprobleme, zunehmende Lähmung: medizinischer Notfall"},
+    {"zustand": "schwindel_beim_hinlegen", "stufe": 4, "hinweis": "Satz im Audio vorhanden"},
+    {"zustand": "blutverduenner", "stufe": 4, "hinweis": "Info im Heft"}
+  ],
+  "teile": [
+    {
+      "id": "einleitung",
+      "segmente": [
+        {"typ": "sprechen", "text": "Wir dehnen jetzt die Rückseite des Oberschenkels. Du brauchst dein Theraband und eine rutschfeste Unterlage. Lege dich auf den Rücken, beide Beine sind ganz durchgestreckt. Wird dir beim Hinlegen schwindelig, bleib einen Moment liegen. Hält es an, beende die Übung.", "soll_dauer_s": 20},
+        {"typ": "pause", "soll_dauer_s": 5}
+      ]
+    },
+    {
+      "id": "block_rechts",
+      "seite": "rechts",
+      "segmente": [
+        {"typ": "sprechen", "text": "Lege das Band unter die Fußsohle deines rechten Fußes, in die Mitte zwischen Ferse und Fußballen. Etwas näher am Fußballen sitzt es am besten. Halte beide Enden fest in den Händen.", "soll_dauer_s": 15.5},
+        {"typ": "pause", "soll_dauer_s": 4},
+        {"typ": "sprechen", "text": "Hebe das Bein mit dem Band nach oben. Das Knie bleibt dabei durchgestreckt. Ziehe das Bein, bis du ein Ziehen hinter dem Oberschenkel spürst. Ein rechter Winkel ist das Ziel.", "soll_dauer_s": 15},
+        {"typ": "pause", "soll_dauer_s": 5},
+        {"typ": "sprechen", "text": "Das Ziehen im Muskel ist unangenehm, und das ist richtig so. Auf einer Skala von null bis zehn sollte es höchstens eine Zwei sein. Schmerz in der Hüfte oder im Knie ist ein Warnsignal. Dann lass sofort locker.", "soll_dauer_s": 19},
+        {"typ": "pause", "soll_dauer_s": 3},
+        {"typ": "sprechen", "text": "Jetzt halten wir neunzig Sekunden. Atme ruhig und gleichmäßig weiter.", "soll_dauer_s": 4.5},
+        {"typ": "halten", "soll_dauer_s": 90, "cues": [
+          {"bei_s": 10, "text": "Prüfe dein Knie. Ist es durchgestreckt?"},
+          {"bei_s": 22, "text": "Ziehe die Zehenspitzen zu dir heran. Das verstärkt die Dehnung."},
+          {"bei_s": 30, "text": "Noch sechzig Sekunden."},
+          {"bei_s": 40, "text": "Liegt dein anderes Bein gestreckt auf dem Boden?"},
+          {"bei_s": 50, "text": "Knie noch durchgestreckt? Lässt die Dehnung nach? Dann ziehe das Bein ein kleines Stück näher."},
+          {"bei_s": 60, "text": "Noch dreißig Sekunden. Atme ruhig weiter."},
+          {"bei_s": 70, "text": "Knie noch durchgestreckt? Zehenspitzen noch bei dir?"},
+          {"bei_s": 80, "text": "Noch zehn Sekunden."}
+        ]},
+        {"typ": "sprechen", "text": "Senke das Bein langsam und lege es entspannt ab.", "soll_dauer_s": 4.5},
+        {"typ": "pause", "soll_dauer_s": 8}
+      ]
+    },
+    {
+      "id": "wechsel",
+      "segmente": [
+        {"typ": "sprechen", "text": "Jetzt das andere Bein.", "soll_dauer_s": 2},
+        {"typ": "pause", "soll_dauer_s": 5}
+      ]
+    },
+    {
+      "id": "block_links",
+      "seite": "links",
+      "hinweis": "Gleicher Text wie block_rechts mit 'linken Fußes', zusätzlicher Cue bei 85 s",
+      "segmente": [
+        {"typ": "sprechen", "text": "Lege das Band unter die Fußsohle deines linken Fußes, in die Mitte zwischen Ferse und Fußballen. Etwas näher am Fußballen sitzt es am besten. Halte beide Enden fest in den Händen.", "soll_dauer_s": 15.5},
+        {"typ": "pause", "soll_dauer_s": 4},
+        {"typ": "sprechen", "text": "Hebe das Bein mit dem Band nach oben. Das Knie bleibt dabei durchgestreckt. Ziehe das Bein, bis du ein Ziehen hinter dem Oberschenkel spürst. Ein rechter Winkel ist das Ziel.", "soll_dauer_s": 15},
+        {"typ": "pause", "soll_dauer_s": 5},
+        {"typ": "sprechen", "text": "Das Ziehen im Muskel ist unangenehm, und das ist richtig so. Auf einer Skala von null bis zehn sollte es höchstens eine Zwei sein. Schmerz in der Hüfte oder im Knie ist ein Warnsignal. Dann lass sofort locker.", "soll_dauer_s": 19},
+        {"typ": "pause", "soll_dauer_s": 3},
+        {"typ": "sprechen", "text": "Jetzt halten wir neunzig Sekunden. Atme ruhig und gleichmäßig weiter.", "soll_dauer_s": 4.5},
+        {"typ": "halten", "soll_dauer_s": 90, "cues": [
+          {"bei_s": 10, "text": "Prüfe dein Knie. Ist es durchgestreckt?"},
+          {"bei_s": 22, "text": "Ziehe die Zehenspitzen zu dir heran. Das verstärkt die Dehnung."},
+          {"bei_s": 30, "text": "Noch sechzig Sekunden."},
+          {"bei_s": 40, "text": "Liegt dein anderes Bein gestreckt auf dem Boden?"},
+          {"bei_s": 50, "text": "Knie noch durchgestreckt? Lässt die Dehnung nach? Dann ziehe das Bein ein kleines Stück näher."},
+          {"bei_s": 60, "text": "Noch dreißig Sekunden. Atme ruhig weiter."},
+          {"bei_s": 70, "text": "Knie noch durchgestreckt? Zehenspitzen noch bei dir?"},
+          {"bei_s": 80, "text": "Noch zehn Sekunden."},
+          {"bei_s": 85, "text": "Du hast es gleich geschafft."}
+        ]},
+        {"typ": "sprechen", "text": "Senke das Bein langsam und lege es entspannt ab.", "soll_dauer_s": 4.5},
+        {"typ": "pause", "soll_dauer_s": 8}
+      ]
+    },
+    {
+      "id": "schluss",
+      "segmente": [
+        {"typ": "sprechen", "text": "Geschafft. Bewege beide Beine locker und schüttle sie kurz aus. Setz dich dann langsam auf.", "soll_dauer_s": 7.5}
+      ]
+    }
+  ],
+  "soll_gesamtdauer_s": 376.5,
+  "toleranz_prozent": 10
+}

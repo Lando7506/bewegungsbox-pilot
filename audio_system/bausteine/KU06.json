@@ -1,0 +1,161 @@
+{
+  "id": "KU06",
+  "version": 1,
+  "status": "entwurf_nicht_freigegeben",
+  "titel": "Bizeps Curls mit Theraband (Kraft, beide Arme, 2 Sätze)",
+  "kategorie": "kraft_arme",
+  "material": [
+    "Theraband"
+  ],
+  "position": "sitzen_stehen",
+  "sprechtempo_woerter_pro_sekunde": 2,
+  "haltezeit_gesamt_s": 0,
+  "empfohlene_haeufigkeit": "offen (täglich oder alle 2 Tage, OP-B18)",
+  "belastet_regionen": [
+    "schulter"
+  ],
+  "_hinweis": "Vorschlag des Systemchats aus Dokument 18. belastet_regionen und stufen_zuordnung sind NICHT fachlich geprüft und bewusst knapp. Der Satz zum Schmerzhinweis ist ergänzt, im Skript fehlte er. Entwurf, noch nicht aufgenommen.",
+  "bild_vorgaben": [
+    "Ausgangslage",
+    "Endposition"
+  ],
+  "stufen_zuordnung": [
+    {
+      "zustand": "akuter_muskelfaserriss",
+      "stufe": 2,
+      "hinweis": "Baustein sperren (Vorschlag)"
+    },
+    {
+      "zustand": "schulterprobleme",
+      "stufe": 3,
+      "hinweis": "Hinweis auf dem Planblatt (Vorschlag)"
+    }
+  ],
+  "teile": [
+    {
+      "id": "satz_1",
+      "segmente": [
+        {
+          "typ": "sprechen",
+          "text": "Wir machen jetzt Armbeugen mit dem Theraband, im Sitzen oder im Stehen. Das Band liegt unter einem Fuß, der Oberkörper bleibt aufrecht, der Oberarm bleibt an der Seite. Bei Schmerz hör sofort auf.",
+          "soll_dauer_s": 16.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 4
+        },
+        {
+          "typ": "sprechen",
+          "text": "Ich sage dir an, wann es rauf und runter geht. Rauf dauert vier Sekunden, runter dauert vier Sekunden. Wir beginnen mit dem rechten Arm. Mach nur, was du schaffst. Los geht's.",
+          "soll_dauer_s": 15.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 2
+        },
+        {
+          "typ": "wiederholungen",
+          "modus": "wortsignal",
+          "woerter": [
+            "Rauf",
+            "Runter"
+          ],
+          "anzahl": 10,
+          "takt_s": 4,
+          "soll_dauer_s": 80
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 6
+        },
+        {
+          "typ": "sprechen",
+          "text": "Jetzt der linke Arm.",
+          "soll_dauer_s": 2.0
+        },
+        {
+          "typ": "wiederholungen",
+          "modus": "wortsignal",
+          "woerter": [
+            "Rauf",
+            "Runter"
+          ],
+          "anzahl": 10,
+          "takt_s": 4,
+          "soll_dauer_s": 80
+        },
+        {
+          "typ": "sprechen",
+          "text": "Sehr gut. Lass die Arme hängen.",
+          "soll_dauer_s": 3.0
+        },
+        {
+          "typ": "satzpause",
+          "soll_dauer_s": 60,
+          "cues": [
+            {
+              "bei_s": 20,
+              "text": "Atme ruhig. Du machst das gut."
+            },
+            {
+              "bei_s": 50,
+              "text": "Gleich nächste Runde. Du schaffst das."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "satz_2",
+      "segmente": [
+        {
+          "typ": "sprechen",
+          "text": "Los geht's mit dem zweiten Satz, wieder zuerst rechts. Bei Schmerz hör sofort auf.",
+          "soll_dauer_s": 7.0
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 2
+        },
+        {
+          "typ": "wiederholungen",
+          "modus": "wortsignal",
+          "woerter": [
+            "Rauf",
+            "Runter"
+          ],
+          "anzahl": 10,
+          "takt_s": 4,
+          "soll_dauer_s": 80
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 6
+        },
+        {
+          "typ": "sprechen",
+          "text": "Jetzt der linke Arm.",
+          "soll_dauer_s": 2.0
+        },
+        {
+          "typ": "wiederholungen",
+          "modus": "wortsignal",
+          "woerter": [
+            "Rauf",
+            "Runter"
+          ],
+          "anzahl": 10,
+          "takt_s": 4,
+          "soll_dauer_s": 80
+        },
+        {
+          "typ": "sprechen",
+          "text": "Super gemacht. Lass die Arme hängen und atme durch.",
+          "soll_dauer_s": 4.5
+        }
+      ]
+    }
+  ],
+  "toleranz_prozent": 10,
+  "soll_gesamtdauer_s": 450.5
+}

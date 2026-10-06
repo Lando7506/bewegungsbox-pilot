@@ -1,0 +1,115 @@
+{
+  "id": "KU01",
+  "version": 1,
+  "status": "entwurf_nicht_freigegeben",
+  "titel": "Aufstehen vom Stuhl (Kraft, 2 Sätze mit je 10 Wiederholungen)",
+  "kategorie": "kraft_beine",
+  "material": [
+    "Stuhl mit Lehne"
+  ],
+  "position": "sitzen_stehen",
+  "sprechtempo_woerter_pro_sekunde": 2,
+  "haltezeit_gesamt_s": 0,
+  "empfohlene_haeufigkeit": "offen (täglich oder alle 2 Tage, OP-B18)",
+  "belastet_regionen": [
+    "hueft",
+    "knie",
+    "oberschenkel_wade"
+  ],
+  "_hinweis": "Vorschlag des Systemchats. belastet_regionen und stufen_zuordnung sind NICHT fachlich geprüft, die Zuordnung ist bewusst nur das Nötigste. Textquelle: Dokument 18, KÜ-01. Der Satz zum Schmerzhinweis wurde ergänzt, im Skript fehlte er.",
+  "bild_vorgaben": [
+    "Ausgangslage sitzend",
+    "Stehende Position"
+  ],
+  "stufen_zuordnung": [
+    {
+      "zustand": "akuter_muskelfaserriss",
+      "stufe": 2,
+      "hinweis": "Baustein sperren (Vorschlag, nicht fachlich geprüft)"
+    },
+    {
+      "zustand": "standunsicher",
+      "stufe": 3,
+      "hinweis": "Festhalten betonen, Hinweis auf dem Planblatt (Vorschlag)"
+    }
+  ],
+  "teile": [
+    {
+      "id": "satz_1",
+      "segmente": [
+        {
+          "typ": "sprechen",
+          "text": "Wir machen jetzt das Aufstehen vom Stuhl. Das kräftigt deine Beine. Setz dich aufrecht auf einen Stuhl mit Lehne. Die Füße stehen flach auf dem Boden, etwa hüftbreit auseinander. Bei Schmerz hör sofort auf.",
+          "soll_dauer_s": 17.0
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 4
+        },
+        {
+          "typ": "sprechen",
+          "text": "Neige den Oberkörper leicht nach vorn und komm mit den Beinen hoch. Steh kurz aufrecht, dann setz dich langsam wieder hin. Mach nur, was du schaffst. Wenn die Lehne helfen soll, nutz sie. Los geht's.",
+          "soll_dauer_s": 17.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 2
+        },
+        {
+          "typ": "wiederholungen",
+          "modus": "zaehlen",
+          "anzahl": 10,
+          "takt_s": 7,
+          "soll_dauer_s": 70
+        },
+        {
+          "typ": "sprechen",
+          "text": "Super. Bleib sitzen und atme ruhig.",
+          "soll_dauer_s": 3.0
+        },
+        {
+          "typ": "satzpause",
+          "soll_dauer_s": 60,
+          "cues": [
+            {
+              "bei_s": 20,
+              "text": "Atme ruhig. Du machst das gut."
+            },
+            {
+              "bei_s": 50,
+              "text": "Gleich noch ein Satz. Du schaffst das."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "satz_2",
+      "segmente": [
+        {
+          "typ": "sprechen",
+          "text": "Los geht's mit dem zweiten Satz. Bei Schmerz hör sofort auf.",
+          "soll_dauer_s": 5.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 2
+        },
+        {
+          "typ": "wiederholungen",
+          "modus": "zaehlen",
+          "anzahl": 10,
+          "takt_s": 7,
+          "soll_dauer_s": 70
+        },
+        {
+          "typ": "sprechen",
+          "text": "Super gemacht. Bleib sitzen und atme durch.",
+          "soll_dauer_s": 3.5
+        }
+      ]
+    }
+  ],
+  "soll_gesamtdauer_s": 254.5,
+  "toleranz_prozent": 10
+}

@@ -1,0 +1,116 @@
+{
+  "id": "KU02",
+  "version": 1,
+  "status": "entwurf_nicht_freigegeben",
+  "titel": "Knie heben im Stehen (Marsch, Kraft, 2 Sätze mit je 10 Wiederholungen)",
+  "kategorie": "kraft_beine",
+  "material": [
+    "Stuhl oder feste Kante zum Festhalten"
+  ],
+  "position": "sitzen_stehen",
+  "sprechtempo_woerter_pro_sekunde": 2,
+  "haltezeit_gesamt_s": 0,
+  "empfohlene_haeufigkeit": "offen (täglich oder alle 2 Tage, OP-B18)",
+  "belastet_regionen": [
+    "hueft",
+    "knie",
+    "oberschenkel_wade",
+    "fuss"
+  ],
+  "_hinweis": "Vorschlag des Systemchats aus Dokument 18. belastet_regionen und stufen_zuordnung sind NICHT fachlich geprüft und bewusst knapp. Der Satz zum Schmerzhinweis ist ergänzt, im Skript fehlte er. Entwurf, noch nicht aufgenommen.",
+  "bild_vorgaben": [
+    "Ausgangslage",
+    "Endposition"
+  ],
+  "stufen_zuordnung": [
+    {
+      "zustand": "akuter_muskelfaserriss",
+      "stufe": 2,
+      "hinweis": "Baustein sperren (Vorschlag)"
+    },
+    {
+      "zustand": "standunsicher",
+      "stufe": 3,
+      "hinweis": "Festhalten betonen, Hinweis auf dem Planblatt (Vorschlag)"
+    }
+  ],
+  "teile": [
+    {
+      "id": "satz_1",
+      "segmente": [
+        {
+          "typ": "sprechen",
+          "text": "Wir machen jetzt den Marsch im Stehen. Stell dich aufrecht hin und halte dich an der Lehne eines Stuhls oder an einer Kante fest. Schultern locker, Kopf gerade. Bei Schmerz hör sofort auf.",
+          "soll_dauer_s": 16.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 4
+        },
+        {
+          "typ": "sprechen",
+          "text": "Heb abwechselnd die Knie, nur so hoch, wie es angenehm ist. Mach nur, was du schaffst. Halt dich gut fest. Los geht's.",
+          "soll_dauer_s": 11.0
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 2
+        },
+        {
+          "typ": "wiederholungen",
+          "modus": "zaehlen",
+          "anzahl": 10,
+          "takt_s": 7,
+          "soll_dauer_s": 70
+        },
+        {
+          "typ": "sprechen",
+          "text": "Sehr gut. Bleib stehen und atme ruhig.",
+          "soll_dauer_s": 3.5
+        },
+        {
+          "typ": "satzpause",
+          "soll_dauer_s": 60,
+          "cues": [
+            {
+              "bei_s": 20,
+              "text": "Atme ruhig. Du machst das gut."
+            },
+            {
+              "bei_s": 50,
+              "text": "Gleich noch ein Satz. Du schaffst das."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "satz_2",
+      "segmente": [
+        {
+          "typ": "sprechen",
+          "text": "Los geht's mit dem zweiten Satz. Bei Schmerz hör sofort auf.",
+          "soll_dauer_s": 5.5
+        },
+        {
+          "typ": "pause",
+          "soll_dauer_s": 2
+        },
+        {
+          "typ": "wiederholungen",
+          "modus": "zaehlen",
+          "anzahl": 10,
+          "takt_s": 7,
+          "soll_dauer_s": 70
+        },
+        {
+          "typ": "sprechen",
+          "text": "Sehr gut. Setz dich hin und atme durch.",
+          "soll_dauer_s": 4.0
+        }
+      ]
+    }
+  ],
+  "toleranz_prozent": 10,
+  "soll_gesamtdauer_s": 248.5
+}
