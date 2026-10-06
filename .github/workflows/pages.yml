@@ -37,6 +37,8 @@ jobs:
           cmp /tmp/erwartung_alt.json <(gunzip -c pilot/tests/erwartung.json.gz)
       - name: JS Logik gleich Python Logik
         run: node pilot/tests/vergleich.test.js
+      - name: Darstellung passt zu den Fragetexten
+        run: node pilot/tests/darstellung.test.js
       - name: Sabotagetest
         run: node pilot/tests/sabotage.test.js
 
@@ -58,7 +60,11 @@ jobs:
       - name: Nur die Dateien der App veröffentlichen
         run: |
           mkdir _site
-          cp pilot/index.html pilot/app.css pilot/app.js pilot/logik.js pilot/daten.js _site/
+          cp pilot/index.html pilot/app.css pilot/app.js pilot/logik.js pilot/darstellung.js pilot/daten.js _site/
+          # Jede Datei, die index.html einbindet, muss mit veröffentlicht werden
+          for f in $(grep -oE '(src|href)="[^"#]+"' _site/index.html | cut -d'"' -f2); do
+            test -f "_site/$f" || { echo "Fehlt beim Veröffentlichen: $f"; exit 1; }
+          done
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
