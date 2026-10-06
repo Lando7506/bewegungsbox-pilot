@@ -183,7 +183,9 @@
 
   // ------------------------------------------------------------------ Fragebogen
 
-  function zeigeFrage() {
+  /* Zeigt die aktuelle Frage. Mit behalten bleibt die Seite, wo sie ist (nach dem Antippen einer Antwort),
+   * sonst beginnt sie oben und der Fokus geht auf die Frage. */
+  function zeigeFrage(behalten) {
     zustand.ansicht = "frage";
     const f = FRAGEN[zustand.frageId];
     const liste = sichtbar();
@@ -217,7 +219,22 @@
       knopf(weiterText, weiter, "", { id: "weiter" })
     );
     const meldung = zustand.meldung ? el("p", { klasse: "meldung", role: "alert", text: zustand.meldung }) : null;
-    zeigen(kopf, el("h1", { klasse: "frage-text", id: "frage-titel", "data-frage": f.id, text: f.text }), eingabe, meldung, knoepfe);
+    const teile = [kopf, el("h1", { klasse: "frage-text", id: "frage-titel", "data-frage": f.id, text: f.text }), eingabe, meldung, knoepfe];
+    if (behalten) {
+      const y = window.scrollY;
+      document.getElementById("inhalt").replaceChildren(...teile.filter(Boolean));
+      window.scrollTo(0, y);
+    } else {
+      zeigen(...teile);
+    }
+  }
+
+  // Nach einer Antwort mit nur einer Wahl geht es kurz danach von selbst weiter, ohne extra Tippen auf "Weiter"
+  const AUTO_WEITER_MS = 400;
+  function autoWeiter(fid) {
+    setTimeout(() => {
+      if (zustand.ansicht === "frage" && zustand.frageId === fid) weiter();
+    }, AUTO_WEITER_MS);
   }
 
   // Schritt Titel aus den Daten, der Zusatz "für alle" ist nur für Lando gedacht
@@ -262,9 +279,10 @@
               }
               setze(f.id, liste);
             }
-            zeigeFrage();
+            zeigeFrage(true);
+            if (!mehrfach) autoWeiter(f.id);
             const neu = document.querySelector(`.wahl-knopf[data-wert="${CSS.escape(String(o.wert))}"]`);
-            if (neu) neu.focus();
+            if (neu) neu.focus({ preventScroll: true });
           },
         },
         o.text
