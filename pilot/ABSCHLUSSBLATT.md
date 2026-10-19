@@ -43,3 +43,13 @@ Die Punkte stammen aus dem Python System (Referenz) und gelten im Piloten genaus
 - Für Nutzer stehen nur eigene Bedienungstexte in du-Form und die Fragetexte aus den Daten. Die Felder `hinweis` aus `fragebogen.json` sind Notizen für Lando und werden nicht angezeigt.
 - Wer beim Zurückgehen eine Antwort ändert, die Folgefragen ausblendet, behält die alten Antworten im Speicher. Sie zählen erst wieder, wenn die Folgefrage wieder gestellt wird. Ausgewertet wird immer nur, was im aktuellen Verlauf sichtbar ist.
 - Bei Text- und E-Mail-Feldern steht der Hinweis, nichts Echtes einzutragen.
+
+## Nachtrag 06.10.2026: simulierte Kundentests
+
+Die Bedienung wurde nach vier simulierten Kundentests überarbeitet. Was umgesetzt ist, was bewusst nicht, und zwölf weitere Vorschläge zum Fragetext stehen in `ux-tests/ZUSAMMENFASSUNG.md`. Die wichtigsten neuen Punkte für die Fachperson:
+
+- F1 ist andersherum gefragt. Nach vielen „Nein“ führt ein „Nein“ aus Gewohnheit zu Rot. Im Piloten gibt es jetzt einen Hinweis, besser wäre es, die Frage umzudrehen.
+- Die Anrede „die Person“ passt nicht, wenn jemand selbst ausfüllt.
+- Doppelfragen in B3, B5 und C2.
+- Bei Orange wird angerufen, die Telefonnummer ist aber freiwillig.
+
