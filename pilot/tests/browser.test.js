@@ -205,7 +205,7 @@ async function lauf(browser, breite, hoehe, kennung) {
   pruefe(pauseSichtbar, `${kennung} Player: Pause ist nicht ohne Scrollen sichtbar`);
   await bild(seite, mitBildern("04_player.png"));
   await seite.locator("#spielen").click();
-  pruefe((await seite.locator("#spielen").innerText()).includes("Weiter abspielen"), `${kennung} Player: Pause wirkt nicht`);
+  pruefe((await seite.locator("#spielen").innerText()).includes("Fortsetzen"), `${kennung} Player: Pause wirkt nicht`);
   await seite.locator("#naechste").click();
   const titel2 = await seite.locator("h1").innerText();
   pruefe(titel1 !== titel2, `${kennung} Player: Nächste Übung wechselt die Übung nicht`);

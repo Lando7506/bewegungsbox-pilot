@@ -36,7 +36,7 @@ Vier KI-Agenten haben den Piloten per Klick im Browser durchgespielt und Kritik 
 | Ampel: Notfallhinweis zuerst, eigene Zeichen statt Buchstaben (G für Grün und Gelb), „Darauf wird Rücksicht genommen“ | Verständlicher |
 | Orange: „So geht es weiter“ mit dem Hinweis, wer angerufen wird. Fehlt die Telefonnummer, gibt es einen Knopf zum Eintragen | Sabines wichtigster Punkt |
 | Plan: Gesamtdauer und Abspielen oben, je Übung „Wegen: …“ | Kein langes Scrollen bis zum Abspielen |
-| Player: feste Leiste mit Pause, Vorige, Nochmal, Nächste | Pause liegt nicht mehr unter dem Bildrand |
+| Player: feste Leiste mit Pause, Vorige, Wiederholen, Weiter | Pause liegt nicht mehr unter dem Bildrand |
 | E-Mail- und Telefonfeld mit passender Tastatur, eine falsche Eingabe wird nicht mehr gelöscht | Schneller zu tippen |
 | Warnung vor dem Schließen des Fensters, wenn schon Antworten da sind | Kein versehentlicher Verlust |
 

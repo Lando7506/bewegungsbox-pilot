@@ -40,7 +40,7 @@
     orange: {
       wort: "Orange",
       zeichen: "☎",
-      kurz: "Erst ein kurzes Gespräch.",
+      kurz: "Rückruf nötig.",
       lang: "Bevor es einen Plan gibt, möchte Lando kurz mit dir sprechen und ein paar Fragen klären.",
     },
     rot: {
@@ -1138,7 +1138,7 @@
     const symbol = (z) => el("span", { klasse: "symbol", "aria-hidden": "true", text: z });
     const spielKnopf = player.laeuft
       ? el("button", { type: "button", klasse: "knopf knopf-spielen", id: "spielen", onclick: anhalten }, symbol("❚❚"), "Pause")
-      : el("button", { type: "button", klasse: "knopf knopf-spielen", id: "spielen", onclick: abspielen }, symbol("▶"), player.vergangen || player.s || player.u ? "Weiter abspielen" : "Abspielen");
+      : el("button", { type: "button", klasse: "knopf knopf-spielen", id: "spielen", onclick: abspielen }, symbol("▶"), player.vergangen || player.s || player.u ? "Fortsetzen" : "Abspielen");
     const leiste = el(
       "div",
       { klasse: "aktionsleiste player-leiste" },
@@ -1164,7 +1164,7 @@
             springeZuUebung(player.u, false);
             if (!player.laeuft) zeichnePlayer();
           },
-        }, symbol("↺"), "Nochmal"),
+        }, symbol("↺"), "Wiederholen"),
         el("button", {
           type: "button",
           klasse: "knopf knopf-zweit",
@@ -1174,7 +1174,7 @@
             springeZuUebung(player.zwischenpause ? player.u : player.u + 1, false);
             zeichnePlayer();
           },
-        }, symbol("⏭"), "Nächste")
+        }, symbol("⏭"), "Weiter")
       )
     );
     const aktiv = document.activeElement;
